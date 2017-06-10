@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_pace.py" afterPath="$PROJECT_DIR$/src/first_pace.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_pace.py" afterPath="$PROJECT_DIR$/test/test_pace.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_plan.py" afterPath="$PROJECT_DIR$/src/first_plan.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_pace.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/first_pace.py">
+      <file leaf-file-name="first_plan.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/first_plan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+            <state relative-caret-position="34">
+              <caret line="169" column="59" lean-forward="false" selection-start-line="169" selection-start-column="59" selection-end-line="169" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -93,7 +92,6 @@
         <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/src/first_workout.py" />
         <option value="$PROJECT_DIR$/src/first_step.py" />
-        <option value="$PROJECT_DIR$/src/first_plan.py" />
         <option value="$PROJECT_DIR$/test/test_plan.py" />
         <option value="$PROJECT_DIR$/src/first_distance.py" />
         <option value="$PROJECT_DIR$/database/compare.txt" />
@@ -102,6 +100,7 @@
         <option value="$PROJECT_DIR$/src/first_data.py" />
         <option value="$PROJECT_DIR$/src/first_pace.py" />
         <option value="$PROJECT_DIR$/test/test_pace.py" />
+        <option value="$PROJECT_DIR$/src/first_plan.py" />
       </list>
     </option>
   </component>
@@ -474,9 +473,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 14h 14m 58s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 14h 16m 04s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -504,6 +500,9 @@
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 35m 23s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 23m 11s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="7" y="25" width="1258" height="821" extended-state="0" />
@@ -512,7 +511,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20508744" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46409574" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46409574" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -904,14 +903,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_plan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="463">
-          <caret line="64" column="69" lean-forward="false" selection-start-line="64" selection-start-column="69" selection-end-line="64" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_plan.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1003,6 +994,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1725">
           <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_plan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="169" column="59" lean-forward="false" selection-start-line="169" selection-start-column="59" selection-end-line="169" selection-end-column="59" />
           <folding />
         </state>
       </provider>

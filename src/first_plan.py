@@ -13,7 +13,7 @@ class FirstPlan(object):
     def __init__(self, name, weekly_schedule, race=None, runner=None):
 
         """
-        Constractor
+        Constructor
         
         :param name: plan name
         :type name: str
@@ -23,6 +23,8 @@ class FirstPlan(object):
         :type race: FirstRace
         :param runner: runner profile
         :type runner: FirstRunner
+        :return: instance of FirstPlan
+        :rtype: FirstPlan
         """
 
         if not isinstance(name, basestring):
@@ -56,6 +58,14 @@ class FirstPlan(object):
 
     def details(self, level=0, indent=''):
 
+        """
+        Text report of a training plan
+
+        :param level: level of details; 0 for minimum
+        :param indent:
+        :return: plain text string
+        :rtype: str
+        """
         if not isinstance(level, int):
             raise TypeError('FirstPlan.details - level should be an integer')
         if level < 0:
@@ -63,7 +73,8 @@ class FirstPlan(object):
 
         week = {0: 'Mon', 1: 'Tue', 2: 'Wed', 3: 'Thu', 4: 'Fri', 5: 'Sat', 6: 'Sun'}
         out_string = indent + 'Training Plan:\n' + indent + self.name + '\n'
-        out_string += indent + ('Workout days: ' + week[self.weekly_schedule[0]] + ', ' + week[self.weekly_schedule[1]] + ', ' +
+        out_string += indent + ('Workout days: ' + week[self.weekly_schedule[0]] + ', ' +
+                                week[self.weekly_schedule[1]] + ', ' +
                                 week[self.weekly_schedule[2]] + '\n')
         if self.race is not None:
             out_string += self.race.details(level=level, indent=indent)
@@ -75,17 +86,17 @@ class FirstPlan(object):
             out_string += indent + 'Workouts: - ' + str(len(self.workouts)) + '\n'
             for wo in self.workouts:
                 out_string += wo.details(level=level, indent=indent + '  ')
-                '''
-                if level > 0:
-                    out_string += wo.details()
-                else:
-                    out_string += str(wo)
-                '''
 
         return out_string
 
     def tcx(self):
 
+        """
+        Generate a tcx string to download to a Garmin device
+
+        :return: a tcx format for the training plan
+        :rtype: str
+        """
         tcx_string = '<?xml version="1.0" encoding="UTF-8" standalone="no" ?>\n' + \
                      '<TrainingCenterDatabase xmlns="http://www.garmin.com/xmlschemas/TrainingCenterDatabase/v2" ' + \
                      'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' + \
@@ -134,6 +145,11 @@ class FirstPlan(object):
 
     def can_generate_workouts(self):
 
+        """
+        Check if there are enough data to generate the workouts
+        :return: True
+        :rtype: bool
+        """
         if self.race is None:
             raise ValueError('FirstPlan.can_generate_workouts - must have a race info to generate workouts')
         if self.race.target_time is None:
@@ -145,12 +161,13 @@ class FirstPlan(object):
 
         """
         Generate the training plan
+
         :param data: the database
         :type data: FirstData
         """
 
         if not isinstance(data, FirstData):
-            raise TypeError('data must be an instance of FirstData')
+            raise TypeError('FirstPlan.generate_workouts - data must be an instance of FirstData')
 
         self.can_generate_workouts()
         if self.workouts is not None and len(self.workouts) > 0:
