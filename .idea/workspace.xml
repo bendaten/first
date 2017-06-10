@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/compare.txt" afterPath="$PROJECT_DIR$/database/compare.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_data.py" afterPath="$PROJECT_DIR$/src/first_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_step.py" afterPath="$PROJECT_DIR$/test/test_step.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_workout.py" afterPath="$PROJECT_DIR$/test/test_workout.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_pace.py" afterPath="$PROJECT_DIR$/src/first_pace.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_pace.py" afterPath="$PROJECT_DIR$/test/test_pace.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,27 +23,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_data.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/first_data.py">
+      <file leaf-file-name="first_pace.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/first_pace.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="339" column="36" lean-forward="true" selection-start-line="339" selection-start-column="36" selection-end-line="339" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#34#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FIRSTregularPlans.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/FIRSTregularPlans.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36532">
-              <caret line="2691" column="53" lean-forward="false" selection-start-line="2691" selection-start-column="16" selection-end-line="2691" selection-end-column="53" />
-              <folding>
-                <element signature="n#note#0;n#FIRSTdatabase#0;n#!!top" expanded="false" />
-                <element signature="n#sT#0;n#FIRSTdatabase#0;n#!!top" expanded="false" />
-              </folding>
+            <state relative-caret-position="1725">
+              <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -96,7 +79,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test/test_time.py" />
-        <option value="$PROJECT_DIR$/test/test_pace.py" />
         <option value="$PROJECT_DIR$/src/first_time.py" />
         <option value="$PROJECT_DIR$/test/test_race.py" />
         <option value="$PROJECT_DIR$/src/first_utils.py" />
@@ -107,7 +89,6 @@
         <option value="$PROJECT_DIR$/test/test_distance.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/test/test_data.py" />
-        <option value="$PROJECT_DIR$/src/first_pace.py" />
         <option value="$PROJECT_DIR$/src/first_runner.py" />
         <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/src/first_workout.py" />
@@ -119,6 +100,8 @@
         <option value="$PROJECT_DIR$/test/test_workout.py" />
         <option value="$PROJECT_DIR$/test/test_step.py" />
         <option value="$PROJECT_DIR$/src/first_data.py" />
+        <option value="$PROJECT_DIR$/src/first_pace.py" />
+        <option value="$PROJECT_DIR$/test/test_pace.py" />
       </list>
     </option>
   </component>
@@ -512,14 +495,14 @@
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 14m 06s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_plan_py - 2017.06.09 at 15h 55m 46s.xml">
-      <configuration name="Unittests in test_plan.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 34m 09s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_plan_py - 2017.06.09 at 15h 56m 03s.xml">
-      <configuration name="Unittests in test_plan.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 34m 50s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_plan_py - 2017.06.10 at 14h 14m 47s.xml">
-      <configuration name="Unittests in test_plan.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 35m 23s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -757,13 +740,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/first_segment.py" />
-    <entry file="file://$PROJECT_DIR$/test/test_pace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="2" column="32" lean-forward="false" selection-start-line="2" selection-start-column="32" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/xml/etree/ElementTree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="369">
@@ -818,14 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_pace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="530">
-          <caret line="92" column="31" lean-forward="false" selection-start-line="92" selection-start-column="31" selection-end-line="92" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -1002,6 +970,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="584">
+          <caret line="339" column="36" lean-forward="true" selection-start-line="339" selection-start-column="36" selection-end-line="339" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/FIRSTregularPlans.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36532">
@@ -1013,13 +991,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_data.py">
+    <entry file="file://$PROJECT_DIR$/test/test_pace.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="339" column="36" lean-forward="true" selection-start-line="339" selection-start-column="36" selection-end-line="339" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="129">
+          <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_pace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1725">
+          <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
