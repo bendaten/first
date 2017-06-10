@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_plan.py" afterPath="$PROJECT_DIR$/src/first_plan.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_race.py" afterPath="$PROJECT_DIR$/src/first_race.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_race.py" afterPath="$PROJECT_DIR$/test/test_race.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,11 +23,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_plan.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/first_plan.py">
+      <file leaf-file-name="first_race.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/first_race.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="169" column="59" lean-forward="false" selection-start-line="169" selection-start-column="59" selection-end-line="169" selection-end-column="59" />
+            <state relative-caret-position="219">
+              <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_race.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/test_race.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="82" column="53" lean-forward="false" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -79,7 +90,6 @@
       <list>
         <option value="$PROJECT_DIR$/test/test_time.py" />
         <option value="$PROJECT_DIR$/src/first_time.py" />
-        <option value="$PROJECT_DIR$/test/test_race.py" />
         <option value="$PROJECT_DIR$/src/first_utils.py" />
         <option value="$PROJECT_DIR$/test/test_runner.py" />
         <option value="$PROJECT_DIR$/src/maps.html" />
@@ -89,7 +99,6 @@
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/test/test_data.py" />
         <option value="$PROJECT_DIR$/src/first_runner.py" />
-        <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/src/first_workout.py" />
         <option value="$PROJECT_DIR$/src/first_step.py" />
         <option value="$PROJECT_DIR$/test/test_plan.py" />
@@ -101,6 +110,8 @@
         <option value="$PROJECT_DIR$/src/first_pace.py" />
         <option value="$PROJECT_DIR$/test/test_pace.py" />
         <option value="$PROJECT_DIR$/src/first_plan.py" />
+        <option value="$PROJECT_DIR$/src/first_race.py" />
+        <option value="$PROJECT_DIR$/test/test_race.py" />
       </list>
     </option>
   </component>
@@ -473,21 +484,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 14h 16m 04s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 04m 11s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 09m 02s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 12m 10s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 12m 30s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 14m 06s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -501,6 +497,21 @@
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 23m 11s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 51m 39s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 52m 36s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 53m 05s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 53m 41s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 54m 11s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
   </component>
@@ -746,13 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_race.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="837">
-          <caret line="70" column="80" lean-forward="false" selection-start-line="70" selection-start-column="80" selection-end-line="70" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2017.1/python_stubs/-2125986627/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
@@ -887,14 +891,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_race.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="67" column="15" lean-forward="false" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/first_step.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1002,6 +998,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="169" column="59" lean-forward="false" selection-start-line="169" selection-start-column="59" selection-end-line="169" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_race.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_race.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="82" column="53" lean-forward="false" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
           <folding />
         </state>
       </provider>

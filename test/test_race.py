@@ -62,25 +62,25 @@ class TestFirstRace(unittest.TestCase):
             r1.set_target_time(1243)
             self.fail('Should not get here with bad target time')
         except TypeError as ex:
-            self.assertEqual('a_time must be an instance of FirstTime', str(ex))
+            self.assertEqual('FirstRace.set_target_time - a_time must be an instance of FirstTime', str(ex))
 
         try:  # negative
             r1.set_actual_time(1243)
             self.fail('Should not get here with bad actual time')
         except TypeError as ex:
-            self.assertEqual('a_time must be an instance of FirstTime', str(ex))
+            self.assertEqual('FirstRace.set_actual_time - a_time must be an instance of FirstTime', str(ex))
 
         try:  # negative
             r1.set_status(1234)
             self.fail('Should not get here with bad status')
         except TypeError as ex:
-            self.assertEqual('status must be a string', str(ex))
+            self.assertEqual('FirstRace.set_status - status must be a string', str(ex))
 
         try:  # negative
             r1.set_status('lulu')
             self.fail('Should not get here with a bad status')
         except ValueError as ex:
-            self.assertEqual("Status not in ['scheduled', 'done', 'skipped']", str(ex))
+            self.assertEqual("FirstRace.set_status - Status not in ['scheduled', 'done', 'skipped']", str(ex))
 
 
 if __name__ == '__main__':
