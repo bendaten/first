@@ -17,6 +17,16 @@ class FirstDistance(object):
 
     def __init__(self, distance, unit):
 
+        """
+        Constructor
+
+        :param distance: positive distance value
+        :type distance: float
+        :param unit: length unit
+        :type unit: str
+        :return: instance of FirstDistance
+        :rtype: FirstDistance
+        """
         if distance < 0:
             raise ValueError('FirstDistance.__init__ - %1s is not a positive number' % distance)
         self.distance = distance
