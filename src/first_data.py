@@ -12,9 +12,12 @@ class FirstData(object):
     def __init__(self, xml_path):
 
         """
+        Constructor
 
         :param xml_path: path to xml database
         :type xml_path: str
+        :return: instance of FirstData
+        :rtype: FirstData
         """
 
         self.race_types = []
@@ -112,7 +115,7 @@ class FirstData(object):
                     elif ref_segment.get_type() == 'pace':
                         paces_list.append(FirstPace.from_string(time_string + ' ' + pace_unit.text))
                     else:
-                        raise ValueError('Duration segments have already a reference pace')
+                        raise ValueError('FirstData.__parse_segments - Duration segments have already a reference pace')
 
                     index = index + 1
 
@@ -129,7 +132,8 @@ class FirstData(object):
     def equivalent_time(self, time_from, race_index_from, race_index_to):
 
         """
-        Find equivalent time for another race
+        Find equivalent time for another race. E.G. if you ran 5K in 0:20:13, set your half marathon target
+        time to 1:34:15.
         
         :param time_from: 
         :type time_from: FirstTime
@@ -137,7 +141,8 @@ class FirstData(object):
         :type race_index_from: int
         :param race_index_to: 
         :type race_index_to: int
-        :return: 
+        :return: equivalent time
+        :rtype: FirstTime
         """
 
         if not isinstance(time_from, FirstTime):
@@ -167,6 +172,7 @@ class FirstData(object):
 
         """
         Return the index in the database to the race type name
+
         :param name: type name
         :type name: str
         :return: the type index in the database
@@ -186,6 +192,7 @@ class FirstData(object):
 
         """
         Return the race type from the database with this race type name
+
         :param name: type name
         :type name: str
         :return: the type index in the database
@@ -255,6 +262,20 @@ class FirstSegment(object):
     # noinspection PyTypeChecker
     def __init__(self, name, distance=None, duration=None, ref_pace_name=None):
 
+        """
+        Constructor
+
+        :param name: segment name
+        :type name: str
+        :param distance: segment distance
+        :type distance: FirstDistance
+        :param duration: segment time duration
+        :type duration: FirstTime
+        :param ref_pace_name: reference pace name
+        :type ref_pace_name: str
+        :return instance of FirstSegment
+        :rtype: FirstSegment
+        """
         if not isinstance(name, basestring):
             raise TypeError('FirstSegment.__init__ - name must be a string')
         if distance is not None and not isinstance(distance, FirstDistance):
@@ -271,6 +292,12 @@ class FirstSegment(object):
 
     def get_type(self):
 
+        """
+        Get segment type
+
+        :return: distance, time, or pace
+        :rtype: str
+        """
         if self.distance is not None:
             return 'distance'
         elif self.duration is not None:
@@ -302,6 +329,8 @@ class PlanInstructions(object):
         :type name: str
         :param race_name: reference race name
         :type race_name: str
+        return: instance of PlanInstructions
+        :rtype: PlanInstructions
         """
 
         self.name = name

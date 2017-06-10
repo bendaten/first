@@ -51,25 +51,20 @@ class TestFirstWorkout(unittest.TestCase):
                           'type - body  pace - 0:10:00 min per mile\n' +
                           'Time - 0:10:00\n')
             self.assertEqual(cmp_string, str(wo))
-            cmp_string = ('Week 1 Key-run 1\n' +
-                          'Sat 2017-06-24\n' +
-                          'scheduled\n' +
-                          'Step: "Warm up"  id = 0\n' +
-                          'type - body  pace - 0:10:00 min per mile\n' +
-                          'Time - 0:15:00\n' +
-                          'Step: "Intervals"  id = 1\n' +
-                          'type - repeat  repeat - 8\n' +
-                          'Step: "Fast"  id = 2\n' +
-                          'type - body  pace - 0:08:00 min per mile\n' +
-                          'Distance - 400.0 m\n' +
-                          'Step: "Rest"  id = 3\n' +
-                          'type - body  pace - 0:10:00 min per mile\n' +
-                          'Distance - 400.0 m\n' +
-                          'Step: "Cool down"  id = 4\n' +
-                          'type - body  pace - 0:10:00 min per mile\n' +
-                          'Time - 0:10:00\n' +
-                          'Totals: distance = 6.48 miles   duration = 60.79 minutes\n')
-            self.assertEqual(cmp_string, wo.details())
+            cmp_string = 'Week 1 Key-run 1\n' +\
+                         '  Sat 2017-06-24\n' +\
+                         '  scheduled\n' +\
+                         '  Step: "Warm up"\n' +\
+                         '    0:15:00  at  0:10:00 min per mile\n' +\
+                         '  Step: "Intervals"\n' +\
+                         '    Step: "Fast"\n' +\
+                         '      400.0 m  at  0:08:00 min per mile\n' +\
+                         '    Step: "Rest"\n' +\
+                         '      400.0 m  at  0:10:00 min per mile\n' +\
+                         '  Step: "Cool down"\n' +\
+                         '    0:10:00  at  0:10:00 min per mile\n' +\
+                         '  Totals: distance = 6.48 miles   duration = 60.79 minutes\n'
+            self.assertEqual(cmp_string, wo.details(level=2))
             total_distance_miles = 15.0/10 + 8*(800/1609.344) + 10.0/10
             self.assertAlmostEqual(total_distance_miles, wo.total(), 5)
             total_distance_km = total_distance_miles * 1.609344

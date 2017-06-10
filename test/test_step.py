@@ -157,15 +157,14 @@ class TestFirstStepNew(unittest.TestCase):
             s1.add_step(s3)
             short = 'Step: "' + name + '"  id = 0\ntype - repeat  repeat - 3\n'
             self.assertEqual(short, str(s1))
-            detail = short + \
-                'Step: "3 mile @ 10 min per mile"  id = 1\ntype - body' + \
-                '  pace - 0:10:00 min per mile\nDistance - 3.0 mile\n' + \
-                'Step: "15 minutes @ 19 min per mile"  id = 2\ntype - body' + \
-                '  pace - 0:10:00 min per mile\nTime - 0:15:00\n'
-            self.assertEqual(detail, s1.detail())
+            detail = 'Step: "3 X (3 mile @ 10 min per mile + 15 minutes @ 19 min per mile)"\n' +\
+                     '  Step: "3 mile @ 10 min per mile"\n' +\
+                     '    3.0 mile  at  0:10:00 min per mile\n' +\
+                     '  Step: "15 minutes @ 19 min per mile"\n' +\
+                     '    0:15:00  at  0:10:00 min per mile\n'
+            self.assertEqual(detail, s1.details())
             self.assertAlmostEquals(13.5, s1.total(unit='mile'), 5)
             self.assertAlmostEquals(135.0, s1.total(what='time', unit='minute'))
-            print s1.tcx(indent='  ', delta_seconds=10)
             tcx_string = ('  <Step xsi:type="Repeat_t">\n' +
                           '    <StepId>0</StepId>\n' +
                           '    <Name>3 X (3 mile @ 10 min per mile + 15 minutes @ 19 min per mile)</Name>\n' +
