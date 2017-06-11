@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_data.py" afterPath="$PROJECT_DIR$/src/first_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_distance.py" afterPath="$PROJECT_DIR$/src/first_distance.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_pace.py" afterPath="$PROJECT_DIR$/src/first_pace.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_distance.py" afterPath="$PROJECT_DIR$/test/test_distance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_plan.py" afterPath="$PROJECT_DIR$/src/first_plan.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_pace.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/first_pace.py">
+      <file leaf-file-name="first_plan.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/first_plan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="99">
+              <caret line="195" column="41" lean-forward="true" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -89,7 +85,6 @@
         <option value="$PROJECT_DIR$/test/test_data.py" />
         <option value="$PROJECT_DIR$/database/compare.txt" />
         <option value="$PROJECT_DIR$/test/test_pace.py" />
-        <option value="$PROJECT_DIR$/src/first_plan.py" />
         <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/test/test_race.py" />
         <option value="$PROJECT_DIR$/src/first_runner.py" />
@@ -106,6 +101,7 @@
         <option value="$PROJECT_DIR$/test/test_distance.py" />
         <option value="$PROJECT_DIR$/src/first_distance.py" />
         <option value="$PROJECT_DIR$/src/first_pace.py" />
+        <option value="$PROJECT_DIR$/src/first_plan.py" />
       </list>
     </option>
   </component>
@@ -478,15 +474,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 23h 10m 12s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 23h 14m 57s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 38m 02s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 38m 19s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -506,6 +493,15 @@
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 59m 41s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 01h 04m 32s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 01h 07m 44s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 01h 12m 57s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
   </component>
@@ -960,14 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_plan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="98" column="11" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="98" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/first_workout.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -1014,6 +1002,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
           <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_plan.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="195" column="41" lean-forward="true" selection-start-line="195" selection-start-column="41" selection-end-line="195" selection-end-column="41" />
           <folding />
         </state>
       </provider>

@@ -26,25 +26,25 @@ class FirstPlan(object):
         :return: instance of FirstPlan
         :rtype: FirstPlan
         """
-
+        where_am_i = 'FirstPlan.__init__'
         if not isinstance(name, basestring):
-            raise TypeError('FirstPlan.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
         if not isinstance(weekly_schedule, list):
-            raise TypeError('FirstPlan.__init__ - weekly_schedule must be a list')
+            raise TypeError(where_am_i + ' - weekly_schedule must be a list')
         if len(weekly_schedule) != 3:
-            raise ValueError('FirstPlan.__init__ - weekly_schedule must have 3 days')
+            raise ValueError(where_am_i + ' - weekly_schedule must have 3 days')
         if (not isinstance(weekly_schedule[0], int) or
                 not isinstance(weekly_schedule[1], int) or
                 not isinstance(weekly_schedule[2], int)):
-            raise ValueError('FirstPlan.__init__ - weekly_schedule items must be integers')
+            raise ValueError(where_am_i + ' - weekly_schedule items must be integers')
         if weekly_schedule[1] <= weekly_schedule[0] or weekly_schedule[2] <= weekly_schedule[1]:
-            raise ValueError('FirstPlan.__init__ - weekly_schedlue items must be sorted')
+            raise ValueError(where_am_i + ' - weekly_schedule items must be sorted')
         if weekly_schedule[0] < 0 or weekly_schedule[2] > 6:
-            raise ValueError('FirstPlan.__init__ - weekly_schedule items must be between 0 (Mon) and 6 (Sun)')
+            raise ValueError(where_am_i + ' - weekly_schedule items must be between 0 (Mon) and 6 (Sun)')
         if race is not None and not isinstance(race, FirstRace):
-            raise TypeError('FirstPlan.__init__ - race must be an instance of FirstRace')
+            raise TypeError(where_am_i + ' - race must be an instance of FirstRace')
         if runner is not None and not isinstance(runner, FirstRunner):
-            raise TypeError('FirstPlan.__init__ - runner must be an instance of FirstRunner')
+            raise TypeError(where_am_i + ' - runner must be an instance of FirstRunner')
 
         self.name = name
         self.weekly_schedule = weekly_schedule
@@ -66,10 +66,11 @@ class FirstPlan(object):
         :return: plain text string
         :rtype: str
         """
+        where_am_i = 'FirstPlan.details'
         if not isinstance(level, int):
-            raise TypeError('FirstPlan.details - level should be an integer')
+            raise TypeError(where_am_i + ' - level should be an integer')
         if level < 0:
-            raise ValueError('FirstPlan.details - level should be greater than or equal to 0')
+            raise ValueError(where_am_i + ' - level should be greater than or equal to 0')
 
         week = {0: 'Mon', 1: 'Tue', 2: 'Wed', 3: 'Thu', 4: 'Fri', 5: 'Sat', 6: 'Sun'}
         out_string = indent + 'Training Plan:\n' + indent + self.name + '\n'
@@ -137,9 +138,9 @@ class FirstPlan(object):
         :param workout: a workout
         :type workout: FirstWorkout
         """
-
+        where_am_i = 'FirstPlan.add_workout'
         if not isinstance(workout, FirstWorkout):
-            raise TypeError('FirstPlan.add_workout - workout must be an instance of FirstWorkout')
+            raise TypeError(where_am_i + ' - workout must be an instance of FirstWorkout')
 
         self.workouts.append(workout)
 
@@ -150,10 +151,11 @@ class FirstPlan(object):
         :return: True
         :rtype: bool
         """
+        where_am_i = 'FirstPlan.can_generate_workouts'
         if self.race is None:
-            raise ValueError('FirstPlan.can_generate_workouts - must have a race info to generate workouts')
+            raise ValueError(where_am_i + ' - must have a race info to generate workouts')
         if self.race.target_time is None:
-            raise ValueError('FirstPlan.can_generate_workouts - must have a target time (race) to generate workouts')
+            raise ValueError(where_am_i + ' - must have a target time (race) to generate workouts')
 
         return True
 
@@ -165,9 +167,9 @@ class FirstPlan(object):
         :param data: the database
         :type data: FirstData
         """
-
+        where_am_i = 'FirstPlan.generate_workouts'
         if not isinstance(data, FirstData):
-            raise TypeError('FirstPlan.generate_workouts - data must be an instance of FirstData')
+            raise TypeError(where_am_i + ' - data must be an instance of FirstData')
 
         self.can_generate_workouts()
         if self.workouts is not None and len(self.workouts) > 0:
@@ -177,7 +179,7 @@ class FirstPlan(object):
 
         index = data.race_type_index_by_name(self.race.race_type.name)
         plan_instructions = data.plan_instructions[index]
-        time_index = data.pace_index_by_race_time(self.race.target_time, self.race.race_type.name)
+        time_index = data.pace_index_by_race_time(race_time=self.race.target_time, race_name=self.race.race_type.name)
         # TODO for now all plans have 3 weekly keyruns. Add a parameter num_weekly_runs to generalize
         num_weekly_runs = 3
         num_weeks = len(plan_instructions.instructions) / num_weekly_runs
