@@ -38,8 +38,8 @@ class TestFirstPlan(unittest.TestCase):
         except ValueError as vex:
             self.fail(str(vex))
 
-        rt1 = FirstRaceType('Marathon', 42.195, 'km')
-        rd1 = date(2017, 7, 29)
+        rt1 = FirstRaceType(name='Marathon', distance=42.195, unit='km')
+        rd1 = date(year=2017, month=7, day=29)
         r1 = FirstRace(name='SFM', race_type=rt1, race_date=rd1)
         rn1 = FirstRunner(name='DBD')
 
@@ -74,8 +74,8 @@ class TestFirstPlan(unittest.TestCase):
     def test_add_workout(self):
 
         ws1 = [0, 2, 5]
-        rt1 = FirstRaceType('Marathon', 42.195, 'km')
-        rd1 = date(2017, 7, 29)
+        rt1 = FirstRaceType(name='Marathon', distance=42.195, unit='km')
+        rd1 = date(year=2017, month=7, day=29)
         r1 = FirstRace(name='SFM', race_type=rt1, race_date=rd1)
         rn1 = FirstRunner(name='DBD')
         p1 = FirstPlan(name='My first marathon training plan', weekly_schedule=ws1, race=r1, runner=rn1)
@@ -95,10 +95,10 @@ class TestFirstPlan(unittest.TestCase):
         t_cooldown = FirstTime.from_string('0:10:00')
         s_cooldown = FirstStepBody(name='Cool down', pace=p_warmup, time=t_cooldown)
 
-        wo = FirstWorkout(name='Week 1 Key-run 1', workout_date=date(2017, 6, 24))
-        wo.add_step(s_warmup)
-        wo.add_step(s_repeat)
-        wo.add_step(s_cooldown)
+        wo = FirstWorkout(name='Week 1 Key-run 1', workout_date=date(year=2017, month=6, day=24))
+        wo.add_step(step=s_warmup)
+        wo.add_step(step=s_repeat)
+        wo.add_step(step=s_cooldown)
 
         try:  # first workout
             p1.add_workout(workout=wo)
@@ -127,20 +127,20 @@ class TestFirstPlan(unittest.TestCase):
     def test_generate_workouts(self):
 
         data_file_path = expanduser('~') + '/PycharmProjects/first/database/FIRSTregularPlans.xml'
-        data = FirstData(data_file_path)
+        data = FirstData(xml_path=data_file_path)
         ws1 = [0, 2, 5]
         target_time = data.equivalent_time(time_from=FirstTime(minutes=30),
                                            race_index_from=data.race_type_index_by_name('5K'),
                                            race_index_to=data.race_type_index_by_name('Marathon'))
-        sf_marathon = FirstRace(data.get_race_type_by_name('Marathon'),
-                                'San Francisco Marathon',
-                                date(year=2017, month=7, day=23),
+        sf_marathon = FirstRace(race_type=data.get_race_type_by_name('Marathon'),
+                                name='San Francisco Marathon',
+                                race_date=date(year=2017, month=7, day=23),
                                 target_time=target_time)
         me = FirstRunner(name='Daniel BenDavid', age=56, gender='m', email='yossi@gmail.com')
         p1 = FirstPlan(name='My first marathon training plan', weekly_schedule=ws1, race=sf_marathon, runner=me)
 
         try:  # positive
-            p1.generate_workouts(data)
+            p1.generate_workouts(data=data)
             # print p1.details(1)
             self.assertEqual(48, len(p1.workouts))
             wo = p1.workouts[0]
@@ -196,16 +196,16 @@ class TestFirstPlan(unittest.TestCase):
         target_time = data.equivalent_time(time_from=FirstTime(minutes=22, seconds=36),
                                            race_index_from=data.race_type_index_by_name('5K'),
                                            race_index_to=data.race_type_index_by_name('HalfMarathon'))
-        sf_half_marathon = FirstRace(data.get_race_type_by_name('HalfMarathon'),
-                                     'San Francisco Marathon',
-                                     date(year=2017, month=7, day=23),
+        sf_half_marathon = FirstRace(race_type=data.get_race_type_by_name('HalfMarathon'),
+                                     name='San Francisco Marathon',
+                                     race_date=date(year=2017, month=7, day=23),
                                      target_time=target_time)
         me = FirstRunner(name='Daniel BenDavid', age=56, gender='m', email='yossi@gmail.com')
         p2 = FirstPlan(name='San Francisco half-marathon training plan', weekly_schedule=ws1,
                        race=sf_half_marathon, runner=me)
 
         try:  # positive
-            p2.generate_workouts(data)
+            p2.generate_workouts(data=data)
             # print p2.details(1)
             # print p2.details(2)
 

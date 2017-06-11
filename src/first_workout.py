@@ -23,12 +23,13 @@ class FirstWorkout(object):
         :return: instance to FirstWorkout
         :rtype: FirstWorkout
         """
+        where_am_i = 'FirstWorkout.__init__'
         if not isinstance(name, basestring):
-            raise TypeError('FirstWorkout.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
         if not isinstance(workout_date, datetime.date):
-            raise TypeError('FirstWorkout.__init__ - date must be a datetime')
+            raise TypeError(where_am_i + ' - date must be a datetime')
         if note is not None and not isinstance(note, basestring):
-            raise ValueError('FirstWorkout.__init__ - note must be a string')
+            raise ValueError(where_am_i + ' - note must be a string')
 
         self.name = name
         self.workout_date = workout_date
@@ -39,12 +40,14 @@ class FirstWorkout(object):
     def add_step(self, step):
 
         """
+        Add a step to the workout
 
         :param step:
         :type step: FirstStepBase
         """
+        where_am_i = 'FirstWorkout.add_step'
         if not isinstance(step, FirstStepBase):
-            raise TypeError('FirstWorkout.add_step - step must be an instance of FirstStepBase')
+            raise TypeError(where_am_i + ' - step must be an instance of FirstStepBase')
 
         self.steps.append(step)
 
@@ -57,10 +60,11 @@ class FirstWorkout(object):
         :param status: for now anything
         :type status: str
         """
+        where_am_i = 'FirstWorkout.set_status'
         if status in self.statuses:
             self.status = status
         else:
-            raise ValueError('FirstWorkout.set_status - Status not in ' + str(self.statuses))
+            raise ValueError(where_am_i + ' - Status not in ' + str(self.statuses))
 
     def __str__(self):
 
@@ -116,7 +120,7 @@ class FirstWorkout(object):
         """
         result = 0
         for step in self.steps:
-            result += step.total(what, unit)
+            result += step.total(what=what, unit=unit)
 
         return result
 
@@ -167,6 +171,7 @@ class FirstWorkout(object):
     @staticmethod
     def __parse_steps(data, instructions, time_index, race_pace):
 
+        where_am_i = 'FirstWorkout.__parse_steps'
         steps = []
         simple_instructions = ''
         remainder = instructions
@@ -178,7 +183,7 @@ class FirstWorkout(object):
                                                                          time_index=time_index, race_pace=race_pace)
                 simple_instructions = ''
                 if repeat < 1:
-                    raise ValueError('FirstWorkout.__parse_steps - Syntax error: missing nX before (')
+                    raise ValueError(where_am_i + ' - Syntax error: missing nX before (')
 
                 steps += simple_steps
                 remainder = remainder[1:]
@@ -187,8 +192,8 @@ class FirstWorkout(object):
                                                                                 time_index=time_index,
                                                                                 race_pace=race_pace)
                 if not close_par:
-                    raise ValueError('FirstWorkout.__parse_steps - Unbalanced parentheses')
-                step.set_steps(repeat_steps)
+                    raise ValueError(where_am_i + ' - Unbalanced parentheses')
+                step.set_steps(steps=repeat_steps)
                 steps.append(step)
             elif char == ')':
                 remainder = remainder[1:]
@@ -201,9 +206,10 @@ class FirstWorkout(object):
                 simple_instructions += char
                 remainder = remainder[1:]
 
-        simple_steps, repeat = FirstWorkout.__parse_simple_steps(data, simple_instructions, time_index, race_pace)
+        simple_steps, repeat = FirstWorkout.__parse_simple_steps(data=data, instructions=simple_instructions,
+                                                                 time_index=time_index, race_pace=race_pace)
         if repeat > 0:
-            raise ValueError('FirstWorkout.__parse_steps - Syntax error: trailing nX')
+            raise ValueError(where_am_i + ' - Syntax error: trailing nX')
         steps += simple_steps
 
         return steps, remainder, False

@@ -8,37 +8,37 @@ class TestFirstDistance(unittest.TestCase):
     def test_to_string(self):
 
         try:
-            d1 = FirstDistance(300, 'mm')
+            d1 = FirstDistance(distance=300, unit='mm')
             self.fail('FirstDistance is expected to fail for wrong length unit')
-        except ValueError:
-            pass
+        except ValueError as ex:
+            self.assertEqual('FirstDistance.__init__ - "mm" is not a valid unit', str(ex))
 
         try:
-            d1 = FirstDistance(-300, 'm')
+            d1 = FirstDistance(distance=-300, unit='m')
             self.fail('FirstDistance is expected to fail for negative length')
-        except ValueError:
-            pass
+        except ValueError as ex:
+            self.assertEqual('FirstDistance.__init__ - -300 is not a positive number', str(ex))
 
         try:
-            d1 = FirstDistance(300, 'm')
+            d1 = FirstDistance(distance=300, unit='m')
             self.assertEqual('300 m', str(d1))
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            d1 = FirstDistance(5, 'km')
+            d1 = FirstDistance(distance=5, unit='km')
             self.assertEqual('5 km', str(d1))
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            d1 = FirstDistance(26.2, 'mile')
+            d1 = FirstDistance(distance=26.2, unit='mile')
             self.assertEqual('26.2 mile', str(d1))
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            d1 = FirstDistance(5280, 'ft')
+            d1 = FirstDistance(distance=5280, unit='ft')
             self.assertEqual('5280 ft', str(d1))
         except ValueError as ex:
             self.fail(ex)
@@ -46,36 +46,36 @@ class TestFirstDistance(unittest.TestCase):
     def test_convert_to(self):
 
         try:
-            d1 = FirstDistance(5, 'km')
+            d1 = FirstDistance(distance=5, unit='km')
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            result = d1.convert_to('mm')
+            result = d1.convert_to(unit='mm')
             self.fail('convert_to is expected to fail with unknown unit')
-        except ValueError:
-            pass
+        except ValueError as ex:
+            self.assertEqual('FirstDistance.convert_to - mm is not a valid unit', str(ex))
 
         try:
-            result = d1.convert_to('km')
+            result = d1.convert_to(unit='km')
             self.assertEqual(5, result)
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            result = d1.convert_to('m')
+            result = d1.convert_to(unit='m')
             self.assertEqual(5000, result)
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            result = d1.convert_to('ft')
+            result = d1.convert_to(unit='ft')
             self.assertEqual('16404.20', '{:.2f}'.format(result))
         except ValueError as ex:
             self.fail(ex)
 
         try:
-            result = d1.convert_to('mile')
+            result = d1.convert_to(unit='mile')
             self.assertEqual('3.11', '{:.2f}'.format(result))
         except ValueError as ex:
             self.fail(ex)

@@ -198,8 +198,8 @@ class FirstData(object):
 
         :param name: type name
         :type name: str
-        :return: the type index in the database
-        :rtype: int
+        :return: the type in the database
+        :rtype: FirstRaceType
         """
         where_am_i = 'FirstSegment.get_race_type_by_name'
         if not isinstance(name, basestring):
