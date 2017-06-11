@@ -23,7 +23,7 @@ class TestFirstTime(unittest.TestCase):
             t3 = FirstTime(minutes=-2, seconds=120)
             self.fail('FirstTime should not accept negative values')
         except ValueError as ex:
-            self.assertEqual('FirstTime does not allow negative values', str(ex))
+            self.assertEqual('FirstTime.__init__ - does not allow negative values', str(ex))
 
     def test_from_string(self):
 
@@ -37,7 +37,7 @@ class TestFirstTime(unittest.TestCase):
             t2 = FirstTime.from_string('abc')
             self.fail('FirstTime is expected to fail with "abc"')
         except ValueError as ex:
-            self.assertEqual('unknown string format - "abc"', str(ex))
+            self.assertEqual('FirstTime.from_string - unknown string format - "abc"', str(ex))
 
         try:
             t3 = FirstTime.from_string('3:45')
@@ -49,13 +49,13 @@ class TestFirstTime(unittest.TestCase):
             t4 = FirstTime.from_string('3')
             self.fail('test_from_string should not pass for "3"')
         except ValueError as ex:
-            self.assertEqual('unknown string format for "3"', str(ex))
+            self.assertEqual('FirstTime.from_string - unknown string format for "3"', str(ex))
 
         try:
             t5 = FirstTime.from_string('4/15/2015')
             self.assertEqual('test_from_string should not pass for "4/15/2015"')
         except ValueError as ex:
-            self.assertEqual('unknown string format for "4/15/2015"', str(ex))
+            self.assertEqual('FirstTime.from_string - unknown string format for "4/15/2015"', str(ex))
 
 if __name__ == '__main__':
     unittest.main()

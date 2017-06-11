@@ -4,13 +4,27 @@ from dateutil.parser import parse
 
 class FirstTime(timedelta):
 
+    """FirstTime adds restrictions to timedelta. It allows only positive values and a has a conversion method"""
+
     def __init__(self, hours=0, minutes=0, seconds=0):
 
-        if hours < 0 or minutes < 0 or seconds < 0:
-            raise ValueError(self.__class__.__name__ + ' does not allow negative values')
+        """
+        Constructor
 
-        super(FirstTime, self).__init__(hours=hours, minutes=minutes, seconds=seconds)
-        # super(FirstTime, self).__init__()
+        :param hours:
+        :type hours: int
+        :param minutes:
+        :type minutes: int
+        :param seconds:
+        :type seconds: int
+        :return: instance of FirstTime
+        :rtype: FirstTime
+        """
+        if hours < 0 or minutes < 0 or seconds < 0:
+            raise ValueError('FirstTime.__init__ - does not allow negative values')
+
+        timedelta.__init__(self, hours=hours, minutes=minutes, seconds=seconds)
+        # super(FirstTime, self).__init__(hours=hours, minutes=minutes, seconds=seconds)
 
     conversions = {'second': 1, 'minute': 60, 'hour': 3600}
 
@@ -28,10 +42,10 @@ class FirstTime(timedelta):
         try:
             t_from_str = parse(string)
         except ValueError as ex:
-            raise ValueError(str(ex) + ' - "' + string + '"')
+            raise ValueError('FirstTime.from_string - ' + str(ex) + ' - "' + string + '"')
 
         if t_from_str.hour == 0 and t_from_str.minute == 0 and t_from_str.second == 0:
-            raise ValueError('unknown string format for "%1s"' % string)
+            raise ValueError('FirstTime.from_string - unknown string format for "%1s"' % string)
 
         return cls(hours=t_from_str.hour, minutes=t_from_str.minute, seconds=t_from_str.second)
 
@@ -47,9 +61,10 @@ class FirstTime(timedelta):
         """
 
         if unit not in self.conversions:
-            raise ValueError('%1s is not a valid unit' % unit)
+            raise ValueError('FirstTime.convert_to - %1s is not a valid unit' % unit)
 
-        seconds = super(FirstTime, self).total_seconds()
+        seconds = timedelta.total_seconds(self)
+        # seconds = super(FirstTime, self).total_seconds()
 
         if unit == 'second':
             return seconds
