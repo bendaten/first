@@ -20,8 +20,9 @@ class FirstPace(object):
         :return: instance of FirstPace
         :rtype: FirstPace
         """
+        where_am_i = 'FirstPace.__init__'
         if not FirstDistance.is_valid_unit(length_unit):
-            raise ValueError('FirstPace.__init__ - "%1s" is not a valid length unit' % length_unit)
+            raise ValueError(where_am_i + ' - "%1s" is not a valid length unit' % length_unit)
         self.time = FirstTime(minutes=minutes, seconds=seconds)
         self.length_unit = length_unit
 
@@ -40,15 +41,16 @@ class FirstPace(object):
         :return: instance of FirstPace
         :rtype: FirstPace
         """
+        where_am_i = 'FirstPace.from_string'
         tokens = str_input.split()
 
         p_time = FirstTime.from_string(tokens[0])  # pass the exception on
         length_unit = tokens[-1]
 
-        if not FirstDistance.is_valid_unit(tokens[-1]):
-            raise ValueError('FirstPace.from_string - "%1s" is not a valid length unit' % length_unit)
+        if not FirstDistance.is_valid_unit(unit=tokens[-1]):
+            raise ValueError(where_am_i + ' - "%1s" is not a valid length unit' % length_unit)
 
-        return cls(p_time.seconds//60, p_time.seconds % 60, length_unit)
+        return cls(minutes=p_time.seconds//60, seconds=p_time.seconds % 60, length_unit=length_unit)
 
     def to_time(self, distance, unit):
 
@@ -61,7 +63,7 @@ class FirstPace(object):
         :return: the time value for this unit
         :rtype: float
         """
-        factor = distance.convert_to(self.length_unit)
+        factor = distance.convert_to(unit=self.length_unit)
         seconds = self.time.total_seconds() * factor
         result_time = FirstTime(seconds=seconds)
         return result_time.convert_to(unit=unit)
@@ -77,7 +79,7 @@ class FirstPace(object):
         :rtype: float
         """
         factor = time.total_seconds()/self.time.total_seconds()
-        result_distance = FirstDistance(factor, self.length_unit)
+        result_distance = FirstDistance(distance=factor, unit=self.length_unit)
         return result_distance.convert_to(unit=unit)
 
     @classmethod
@@ -97,7 +99,7 @@ class FirstPace(object):
         """
         if unit is None:
             unit = distance.unit
-        factor = distance.convert_to(unit)  # 400m with unit = mile will become ~0.25
+        factor = distance.convert_to(unit=unit)  # 400m with unit = mile will become ~0.25
         seconds = time.total_seconds() / factor  # 2 minutes for 400m will give ~(2*60)/0.25
 
         return cls(minutes=seconds//60, seconds=round(seconds % 60), length_unit=unit)
@@ -119,8 +121,9 @@ class FirstPace(object):
         :type delta_in_seconds: int
         :return:
         """
+        where_am_i = 'FirstPace.meters_per_second_delta'
         if not isinstance(delta_in_seconds, int):
-            raise ValueError('FirstPace.meters_per_second_delta - delta_in_seconds must be an integer')
+            raise ValueError(where_am_i + ' - delta_in_seconds must be an integer')
 
         seconds = self.time.total_seconds() + delta_in_seconds
         meters = FirstDistance(distance=1.0, unit=self.length_unit).convert_to(unit='m')

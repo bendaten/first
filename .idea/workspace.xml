@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_workout.py" afterPath="$PROJECT_DIR$/src/first_workout.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_workout.py" afterPath="$PROJECT_DIR$/test/test_workout.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_data.py" afterPath="$PROJECT_DIR$/src/first_data.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_distance.py" afterPath="$PROJECT_DIR$/src/first_distance.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_pace.py" afterPath="$PROJECT_DIR$/src/first_pace.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_distance.py" afterPath="$PROJECT_DIR$/test/test_distance.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,33 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_workout.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/first_workout.py">
+      <file leaf-file-name="first_pace.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/first_pace.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="242" column="43" lean-forward="false" selection-start-line="242" selection-start-column="43" selection-end-line="242" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="first_plan.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/first_plan.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="98" column="11" lean-forward="true" selection-start-line="91" selection-start-column="18" selection-end-line="98" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test_workout.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/test_workout.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="327" column="59" lean-forward="false" selection-start-line="327" selection-start-column="59" selection-end-line="327" selection-end-column="59" />
+            <state relative-caret-position="201">
+              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,13 +85,9 @@
         <option value="$PROJECT_DIR$/src/maps.html" />
         <option value="$PROJECT_DIR$/src/first_segment.py" />
         <option value="$PROJECT_DIR$/database/FIRSTregularPlans.xml" />
-        <option value="$PROJECT_DIR$/test/test_distance.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/test/test_data.py" />
-        <option value="$PROJECT_DIR$/src/first_distance.py" />
         <option value="$PROJECT_DIR$/database/compare.txt" />
-        <option value="$PROJECT_DIR$/src/first_data.py" />
-        <option value="$PROJECT_DIR$/src/first_pace.py" />
         <option value="$PROJECT_DIR$/test/test_pace.py" />
         <option value="$PROJECT_DIR$/src/first_plan.py" />
         <option value="$PROJECT_DIR$/src/first_race.py" />
@@ -125,6 +102,10 @@
         <option value="$PROJECT_DIR$/src/first_utils.py" />
         <option value="$PROJECT_DIR$/src/first_workout.py" />
         <option value="$PROJECT_DIR$/test/test_workout.py" />
+        <option value="$PROJECT_DIR$/src/first_data.py" />
+        <option value="$PROJECT_DIR$/test/test_distance.py" />
+        <option value="$PROJECT_DIR$/src/first_distance.py" />
+        <option value="$PROJECT_DIR$/src/first_pace.py" />
       </list>
     </option>
   </component>
@@ -497,34 +478,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 18h 18m 01s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 23h 10m 12s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 15m 17s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 23h 14m 57s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 25m 47s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 38m 02s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 26m 18s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 38m 19s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 26m 43s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 47m 31s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 27m 03s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 49m 16s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 27m 47s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 50m 02s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 19h 31m 43s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 51m 34s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 22h 24m 15s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 55m 09s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 22h 25m 03s.xml">
+    <history-entry file="Unittests_in_test_(1) - 2017.06.11 at 00h 59m 41s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
   </component>
@@ -602,12 +583,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/first_distance.py</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="69" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/first_distance.py</url>
-          <line>57</line>
+          <line>58</line>
           <option name="timeStamp" value="70" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
@@ -746,13 +727,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="115" column="54" lean-forward="false" selection-start-line="115" selection-start-column="54" selection-end-line="115" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/Morgan Hill_workouts.tcx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="971">
@@ -865,14 +839,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_distance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-624">
-          <caret line="27" column="29" lean-forward="false" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -886,16 +852,6 @@
         <state relative-caret-position="15">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="339" column="36" lean-forward="true" selection-start-line="339" selection-start-column="36" selection-end-line="339" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -914,14 +870,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="31" column="48" lean-forward="false" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_pace.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="118" column="35" lean-forward="false" selection-start-line="118" selection-start-column="35" selection-end-line="118" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -1034,6 +982,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
           <caret line="327" column="59" lean-forward="false" selection-start-line="327" selection-start-column="59" selection-end-line="327" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="349" column="11" lean-forward="false" selection-start-line="349" selection-start-column="11" selection-end-line="349" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="101" column="51" lean-forward="false" selection-start-line="101" selection-start-column="51" selection-end-line="101" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_distance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-171">
+          <caret line="58" column="46" lean-forward="false" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_pace.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding />
         </state>
       </provider>

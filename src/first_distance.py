@@ -27,12 +27,13 @@ class FirstDistance(object):
         :return: instance of FirstDistance
         :rtype: FirstDistance
         """
+        where_am_i = 'FirstDistance.__init__'
         if distance < 0:
-            raise ValueError('FirstDistance.__init__ - %1s is not a positive number' % distance)
+            raise ValueError(where_am_i + ' - %1s is not a positive number' % distance)
         self.distance = distance
 
         if not self.is_valid_unit(unit):
-            raise ValueError('FirstDistance.__init__ - "%1s" is not a valid unit' % unit)
+            raise ValueError(where_am_i + ' - "%1s" is not a valid unit' % unit)
         self.unit = unit
 
     @classmethod
@@ -46,20 +47,19 @@ class FirstDistance(object):
         :return: instance of FirstDistance created from the string
         :rtype: FirstDistance
         """
-
+        where_am_i = 'FirstDistance.from_string'
         tokens = string.split()
         if len(tokens) != 2:
-            raise ValueError('FirstDistance.from_string - from_string() ' +
+            raise ValueError(where_am_i + ' - from_string() ' +
                              'expects 2 tokens, number and unit, but got "%1s"' % string)
 
         try:
             value = float(tokens[0])
         except ValueError as ex:
-            raise ValueError('FirstDistance.from_string - from_string() ' +
-                             'exprects the first token to be a number but ' + str(ex))
+            raise ValueError(where_am_i + ' - expects the first token to be a number but ' + str(ex))
         unit = tokens[1]
 
-        return cls(value, unit)
+        return cls(distance=value, unit=unit)
 
     def __str__(self):
 
@@ -75,9 +75,9 @@ class FirstDistance(object):
         :return: the converted value
         :rtype: float
         """
-
+        where_am_i = 'FirstDistance.convert_to'
         if not self.is_valid_unit(unit):
-            raise ValueError('FirstDistance.convert_to - %1s is not a valid unit' % unit)
+            raise ValueError(where_am_i + ' - %1s is not a valid unit' % unit)
 
         if self.unit == unit:
             return self.distance

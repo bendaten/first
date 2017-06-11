@@ -99,8 +99,8 @@ class TestFirstDistance(unittest.TestCase):
             d3 = FirstDistance.from_string('34t papa')
             self.fail('from_string is expected to fail if the first token is not a number')
         except ValueError as ex:
-            message = ('FirstDistance.from_string - from_string() ' +
-                       'exprects the first token to be a number but invalid literal for float(): 34t')
+            message = ('FirstDistance.from_string - ' +
+                       'expects the first token to be a number but invalid literal for float(): 34t')
             self.assertEqual(message, str(ex))
 
         try:

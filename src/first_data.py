@@ -28,7 +28,7 @@ class FirstData(object):
         self.segments_paces = []
         self.plan_instructions = []
 
-        root = ET.parse(xml_path).getroot()
+        root = ET.parse(source=xml_path).getroot()
 
         for child in root:
 
@@ -37,12 +37,13 @@ class FirstData(object):
             elif child.tag == 'note':
                 self.note = child.text
             elif child.tag == 'rTT':
-                self.__parse_races(child[0])
-                self.__parse_rows(child[1])
+                self.__parse_races(races=child[0])
+                self.__parse_rows(rows=child[1])
             elif child.tag == 'sT':
-                self.__parse_segments(child[0], child[1], child[2], child[3])
+                self.__parse_segments(segment_def=child[0], ref_race=child[1],
+                                      pace_unit=child[2], segment_paces=child[3])
             elif child.tag == 'wIs':
-                self.__parse_plan_instructions(child)
+                self.__parse_plan_instructions(plan_instructions=child)
 
     def __str__(self):
 
@@ -54,7 +55,7 @@ class FirstData(object):
             name = race[0].text
             dist = float(race[1][0].text)
             unit = race[1][1].text
-            self.race_types.append(FirstRaceType(name, dist, unit))
+            self.race_types.append(FirstRaceType(name=name, distance=dist, unit=unit))
 
     def __parse_rows(self, rows):
 
@@ -70,6 +71,7 @@ class FirstData(object):
 
     def __parse_segments(self, segment_def, ref_race, pace_unit, segment_paces):
 
+        where_am_i = 'FirstData.__parse_segments'
         index = 0
         for segment in segment_def:
             name = segment[0].text
@@ -115,7 +117,7 @@ class FirstData(object):
                     elif ref_segment.get_type() == 'pace':
                         paces_list.append(FirstPace.from_string(time_string + ' ' + pace_unit.text))
                     else:
-                        raise ValueError('FirstData.__parse_segments - Duration segments have already a reference pace')
+                        raise ValueError(where_am_i + ' - Duration segments have already a reference pace')
 
                     index = index + 1
 
@@ -145,27 +147,28 @@ class FirstData(object):
         :rtype: FirstTime
         """
 
+        where_am_i = 'FirstData.equivalent_time'
         if not isinstance(time_from, FirstTime):
-            raise TypeError('FirstData.equivalent_time - time_from must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - time_from must be an instance of FirstTime')
         if not isinstance(race_index_from, int):
-            raise TypeError('FirstData.equivalent_time - race_index_from must be an int')
+            raise TypeError(where_am_i + ' - race_index_from must be an int')
         if not isinstance(race_index_to, int):
-            raise TypeError('FirstData.equivalent_time - race_index_to must be an int')
+            raise TypeError(where_am_i + ' - race_index_to must be an int')
         num_races = len(self.race_types)
         if race_index_from < 0 or race_index_from >= num_races:
-            raise ValueError('FirstData.equivalent_time - race index must be between 0 and %1d' % (num_races-1))
+            raise ValueError(where_am_i + ' - race index must be between 0 and %1d' % (num_races-1))
         if race_index_to < 0 or race_index_to >= num_races:
-            raise ValueError('FirstData.equivalent_time - race index must be between 0 and %1d' % (num_races-1))
+            raise ValueError(where_am_i + ' - race index must be between 0 and %1d' % (num_races-1))
         ten_minutes = timedelta(minutes=10)
         low_time = self.race_times[0][race_index_from] - ten_minutes
         if time_from < low_time:
-            raise ValueError('FirstData.equivalent_time - time is shorter than the lowest database time')
+            raise ValueError(where_am_i + ' - time is shorter than the lowest database time')
 
         for row in self.race_times:
             if time_from <= row[race_index_from]:
                 return row[race_index_to]
 
-        raise ValueError('FirstData.equivalent_time - time is longer than the highest database time')
+        raise ValueError(where_am_i + ' - time is longer than the highest database time')
 
     # noinspection PyTypeChecker
     def race_type_index_by_name(self, name):
@@ -178,14 +181,14 @@ class FirstData(object):
         :return: the type index in the database
         :rtype: int
         """
-
+        where_am_i = 'FirstSegment.race_type_index_by_name'
         if not isinstance(name, basestring):
-            raise TypeError('FirstSegment.race_type_index_by_name - name is expected to be a string')
+            raise TypeError(where_am_i + ' - name is expected to be a string')
         for index in range(len(self.race_types)):
             if self.race_types[index].name == name:
                 return index
 
-        raise ValueError('FirstSegment.race_type_index_by_name - Race type %1s not found' % name)
+        raise ValueError(where_am_i + ' - Race type %1s not found' % name)
 
     # noinspection PyTypeChecker
     def get_race_type_by_name(self, name):
@@ -198,14 +201,14 @@ class FirstData(object):
         :return: the type index in the database
         :rtype: int
         """
-
+        where_am_i = 'FirstSegment.get_race_type_by_name'
         if not isinstance(name, basestring):
-            raise TypeError('FirstSegment.get_race_type_by_name - name is expected to be a string')
+            raise TypeError(where_am_i + ' - name is expected to be a string')
         for race_type in self.race_types:
             if race_type.name == name:
                 return race_type
 
-        raise ValueError('FirstSegment.get_race_type_by_name - Race type %1s not found' % name)
+        raise ValueError(where_am_i + ' - Race type %1s not found' % name)
 
     def segment_index_by_name(self, name):
 
@@ -245,16 +248,17 @@ class FirstData(object):
         :return: the index based on the time
         :rtype: int
         """
-
+        where_am_i = 'FirstData.Paces.pace_index_by_race_time'
         from_race_index = self.race_type_index_by_name(race_name)
         to_race_index = self.race_type_index_by_name(self.reference_race)
-        ref_time = self.equivalent_time(race_time, from_race_index, to_race_index)
+        ref_time = self.equivalent_time(time_from=race_time,
+                                        race_index_from=from_race_index, race_index_to=to_race_index)
 
         for index in range(len(self.segments_paces)):
             if self.segments_paces[index][0] >= ref_time:
                 return index
 
-        raise ValueError('FirstData.Paces.pace_index_by_race_time - row not found with given time')
+        raise ValueError(where_am_i + ' - row not found with given time')
 
 
 class FirstSegment(object):
@@ -276,14 +280,15 @@ class FirstSegment(object):
         :return instance of FirstSegment
         :rtype: FirstSegment
         """
+        where_am_i = 'FirstSegment.__init__'
         if not isinstance(name, basestring):
-            raise TypeError('FirstSegment.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
         if distance is not None and not isinstance(distance, FirstDistance):
-            raise TypeError('FirstSegment.__init__ - distance must be an instance of FirstDistance')
+            raise TypeError(where_am_i + ' - distance must be an instance of FirstDistance')
         if duration is not None and not isinstance(duration, FirstTime):
-            raise TypeError('FirstSegment.__init__ - duration must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - duration must be an instance of FirstTime')
         if ref_pace_name is not None and not isinstance(ref_pace_name, basestring):
-            raise TypeError('FirstSegment.__init__ - ref_pace_name must be a string')
+            raise TypeError(where_am_i + ' - ref_pace_name must be a string')
 
         self.name = name
         self.distance = distance
@@ -332,7 +337,6 @@ class PlanInstructions(object):
         return: instance of PlanInstructions
         :rtype: PlanInstructions
         """
-
         self.name = name
         self.race_name = race_name
         self.instructions = []
@@ -344,5 +348,4 @@ class PlanInstructions(object):
         :param line: workout instructions
         :type line: str
         """
-
         self.instructions.append(line)
