@@ -22,28 +22,29 @@ class FirstRunner(object):
         :param length_unit: preferred and valid length unit
         :type length_unit: str
         """
+        where_am_i = 'FirstRunner.__init__'
         if not isinstance(name, basestring):
-            raise TypeError('FirstRunner.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
         if age is not None:
             if not isinstance(age, int):
-                raise TypeError('FirstRunner.__init__ - age must be an integer')
+                raise TypeError(where_am_i + ' - age must be an integer')
             if age <= 0:
-                raise ValueError('FirstRunner.__init__ - age must be positive')
+                raise ValueError(where_am_i + ' - age must be positive')
         if gender is not None:
             if not isinstance(gender, basestring):
-                raise TypeError('FirstRunner.__init__ - gender must be a string')
+                raise TypeError(where_am_i + ' - gender must be a string')
             # for now no limit on gender but if the plan has gender related instructions then we might post a warning
             # when a gender is not recognized by the plan
         if not isinstance(length_unit, basestring):
-            raise TypeError('FirstRunner.__init__ - length_unit is expected to be a string')
+            raise TypeError(where_am_i + ' - length_unit is expected to be a string')
         if not FirstDistance.is_valid_unit(length_unit):
-            raise ValueError('FirstRunner.__init__ - length unit not recognized')
+            raise ValueError(where_am_i + ' - length unit not recognized')
 
         if FirstUtils.is_internet_on():
             from validate_email import validate_email
 
-            if email is not None and not validate_email(email):
-                raise ValueError('FirstRunner.__init__ - invalid email address')
+            if email is not None and not validate_email(email=email):
+                raise ValueError(where_am_i + ' - invalid email address')
 
         self.name = name
         self.age = age

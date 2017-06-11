@@ -21,8 +21,9 @@ class FirstRaceType(object):
         :return: instance of FirstRaceType
         :rtype: FirstRaceType
         """
+        where_am_i = 'FirstRace.__init__'
         if not FirstDistance.is_valid_unit(unit):
-            raise ValueError('FirstRace.__init__ - "%1s" is not a valid length unit' % unit)
+            raise ValueError(where_am_i + ' - "%1s" is not a valid length unit' % unit)
         self.name = name
         self.distance = FirstDistance(distance=distance, unit=unit)
 
@@ -50,14 +51,15 @@ class FirstRace(object):
         :return: instance of FirstRace
         :rtype: FirstRace
         """
+        where_am_i = 'FirstRace.__init__'
         if not isinstance(race_type, FirstRaceType):
-            raise TypeError('FirstRace.__init__ - race type must be an instance of FirstRaceType')
+            raise TypeError(where_am_i + ' - race type must be an instance of FirstRaceType')
         if not isinstance(name, basestring):
-            raise TypeError('FirstRace.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
         if not isinstance(race_date, datetime.date):
-            raise TypeError('FirstRace.__init__ - race_date must be an instance of datetime.date')
+            raise TypeError(where_am_i + ' - race_date must be an instance of datetime.date')
         if target_time is not None and not isinstance(target_time, FirstTime):
-            raise TypeError('FirstRace.__init__ - target_time must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - target_time must be an instance of FirstTime')
 
         self.race_type = race_type
         self.name = name
@@ -77,13 +79,14 @@ class FirstRace(object):
         :param status:
         :type status: str
         """
+        where_am_i = 'FirstRace.set_status'
         if not isinstance(status, basestring):
-            raise TypeError('FirstRace.set_status - status must be a string')
+            raise TypeError(where_am_i + ' - status must be a string')
 
         if status in self.statuses:
             self.status = status
         else:
-            raise ValueError('FirstRace.set_status - Status not in ' + str(self.statuses))
+            raise ValueError(where_am_i + ' - Status not in ' + str(self.statuses))
 
     def __str__(self):
 
@@ -129,8 +132,9 @@ class FirstRace(object):
         :param a_time:
         :type a_time: FirstTime
         """
+        where_am_i = 'FirstRace.set_target_time'
         if a_time is not None and not isinstance(a_time, FirstTime):
-            raise TypeError('FirstRace.set_target_time - a_time must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - a_time must be an instance of FirstTime')
 
         self.target_time = a_time
 
@@ -141,8 +145,9 @@ class FirstRace(object):
         :param a_time:
         :type a_time: FirstTime
         """
+        where_am_i = 'FirstRace.set_actual_time'
         if not isinstance(a_time, FirstTime):
-            raise TypeError('FirstRace.set_actual_time - a_time must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - a_time must be an instance of FirstTime')
 
         self.actual_time = a_time
 

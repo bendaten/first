@@ -20,14 +20,14 @@ class FirstStepBase(object):
         """
         Reset the global id
         """
-
         FirstStepBase.__global_id = 0
 
     # noinspection PyTypeChecker
     def __init__(self, name):
 
+        where_am_i = 'FirstStepBase.__init__'
         if not isinstance(name, basestring):
-            raise TypeError('FirstStepBase.__init__ - name must be a string')
+            raise TypeError(where_am_i + ' - name must be a string')
 
         self.step_id = FirstStepBase.__global_id
         FirstStepBase.__global_id += 1
@@ -70,11 +70,11 @@ class FirstStepRepeat(FirstStepBase):
         :return: instance of FirstStepRepeat
         :rtype: FirstStepRepeat
         """
-
+        where_am_i = 'FirstStepRepeat.__init__'
         if repeat is not None and not isinstance(repeat, int):
-            raise TypeError('FirstStepRepeat.__init__ - repeat must be an integer')
+            raise TypeError(where_am_i + ' - repeat must be an integer')
         if repeat < 1:
-            raise ValueError('FirstStepRepeat.__init__ - repeat must be greater than 0')
+            raise ValueError(where_am_i + ' - repeat must be greater than 0')
 
         FirstStepBase.__init__(self, name=name)
 
@@ -144,9 +144,9 @@ class FirstStepRepeat(FirstStepBase):
         :param step: the step to be added
         :type step: FirstStepBase
         """
-
+        where_am_i = 'FirstStepRepeat.add_step'
         if not isinstance(step, FirstStepBase):
-            raise TypeError('FirstStepRepeat.add_step - step must be an instance of FirstStepBase')
+            raise TypeError(where_am_i + ' - step must be an instance of FirstStepBase')
 
         self.steps.append(step)
         
@@ -175,7 +175,7 @@ class FirstStepRepeat(FirstStepBase):
         value = 0
 
         for step in self.steps:
-            value += step.total(what, unit)
+            value += step.total(what=what, unit=unit)
 
         return value * self.repeat
 
@@ -199,17 +199,17 @@ class FirstStepBody(FirstStepBase):
         :return: instance of FirstStepBocy
         :rtype: FirstStepBody
         """
-
+        where_am_i = 'FirstStepBody.__init__'
         if not isinstance(pace, FirstPace):
-            raise TypeError('FirstStepBody.__init__ - pace must be an instance of FirstPace')
+            raise TypeError(where_am_i + ' - pace must be an instance of FirstPace')
         if distance is None and time is None:
-            raise ValueError('FirstStepBody.__init__ - Either distance or time must have a value')
+            raise ValueError(where_am_i + ' - Either distance or time must have a value')
         if distance is not None and not isinstance(distance, FirstDistance):
-            raise TypeError('FirstStepBody.__init__ - distance must be an instance of FirstDistance')
+            raise TypeError(where_am_i + ' - distance must be an instance of FirstDistance')
         if time is not None and not isinstance(time, FirstTime):
-            raise TypeError('FirstStepBody.__init__ - time must be an instance of FirstTime')
+            raise TypeError(where_am_i + ' - time must be an instance of FirstTime')
         if distance is not None and time is not None:
-            raise ValueError('FirstStepBody.__init__ - cannot set both distance and duration in the same step')
+            raise ValueError(where_am_i + ' - cannot set both distance and duration in the same step')
 
         FirstStepBase.__init__(self, name=name)
 
@@ -231,6 +231,7 @@ class FirstStepBody(FirstStepBase):
     def get_duration_type(self):
 
         """
+        Either distance or time
 
         :return: 'distance' or 'time'
         :rtype: str
@@ -328,18 +329,19 @@ class FirstStepBody(FirstStepBase):
         :return: total distance value
         :rtype: float
         """
+        where_am_i = 'FirstStepBody.total'
         if what == 'distance':
             if self.get_duration_type() == what:
-                return self.distance.convert_to(unit)
+                return self.distance.convert_to(unit=unit)
             else:
-                return self.pace.to_distance(self.time, unit)
+                return self.pace.to_distance(time=self.time, unit=unit)
         elif what == 'time':
             if self.get_duration_type() == what:
-                return self.time.convert_to(unit)
+                return self.time.convert_to(unit=unit)
             else:
-                return self.pace.to_time(self.distance, unit)
+                return self.pace.to_time(distance=self.distance, unit=unit)
         else:
-            raise ValueError('FirstStepBody.total - what must be "distance" or "time"')
+            raise ValueError(where_am_i + ' - what must be "distance" or "time"')
 
     @classmethod
     def from_instructions(cls, instructions, data, time_index, rp):

@@ -20,11 +20,11 @@ class FirstTime(timedelta):
         :return: instance of FirstTime
         :rtype: FirstTime
         """
+        where_am_i = 'FirstTime.__init__'
         if hours < 0 or minutes < 0 or seconds < 0:
-            raise ValueError('FirstTime.__init__ - does not allow negative values')
+            raise ValueError(where_am_i + ' - does not allow negative values')
 
         timedelta.__init__(self, hours=hours, minutes=minutes, seconds=seconds)
-        # super(FirstTime, self).__init__(hours=hours, minutes=minutes, seconds=seconds)
 
     conversions = {'second': 1, 'minute': 60, 'hour': 3600}
 
@@ -39,13 +39,14 @@ class FirstTime(timedelta):
         :return: instance of FirstTime
         :rtype: FirstTime
         """
+        where_am_i = 'FirstTime.from_string'
         try:
             t_from_str = parse(string)
         except ValueError as ex:
-            raise ValueError('FirstTime.from_string - ' + str(ex) + ' - "' + string + '"')
+            raise ValueError(where_am_i + ' - ' + str(ex) + ' - "' + string + '"')
 
         if t_from_str.hour == 0 and t_from_str.minute == 0 and t_from_str.second == 0:
-            raise ValueError('FirstTime.from_string - unknown string format for "%1s"' % string)
+            raise ValueError(where_am_i + ' - unknown string format for "%1s"' % string)
 
         return cls(hours=t_from_str.hour, minutes=t_from_str.minute, seconds=t_from_str.second)
 
@@ -59,9 +60,9 @@ class FirstTime(timedelta):
         :return: the converted value
         :rtype: float
         """
-
+        where_am_i = 'FirstTime.convert_to'
         if unit not in self.conversions:
-            raise ValueError('FirstTime.convert_to - %1s is not a valid unit' % unit)
+            raise ValueError(where_am_i + ' - %1s is not a valid unit' % unit)
 
         seconds = timedelta.total_seconds(self)
         # seconds = super(FirstTime, self).total_seconds()
