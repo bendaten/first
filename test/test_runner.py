@@ -55,7 +55,7 @@ class TestFirstRunner(unittest.TestCase):
                 r3 = FirstRunner(name='Forest Gump', email='doesnt#have.symbol.at')
                 self.fail('Should not get here with a bad email')
             except ValueError as ex:
-                self.assertEqual('FirstRunner.__init__ - invalide email address', str(ex))
+                self.assertEqual('FirstRunner.__init__ - invalid email address', str(ex))
 
 
 if __name__ == '__main__':

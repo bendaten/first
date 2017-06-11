@@ -1,6 +1,5 @@
-
-
 # noinspection PyTypeChecker
+from first_distance import FirstDistance
 from first_utils import FirstUtils
 
 
@@ -9,6 +8,20 @@ class FirstRunner(object):
     # noinspection PyTypeChecker
     def __init__(self, name, age=None, gender=None, email=None, length_unit='mile'):
 
+        """
+        Constructor
+
+        :param name:
+        :type name: str
+        :param age: years only
+        :type age: int
+        :param gender: for now anything
+        :type gender: str
+        :param email: Should be a valid email address
+        :type email: str
+        :param length_unit: preferred and valid length unit
+        :type length_unit: str
+        """
         if not isinstance(name, basestring):
             raise TypeError('FirstRunner.__init__ - name must be a string')
         if age is not None:
@@ -23,12 +36,14 @@ class FirstRunner(object):
             # when a gender is not recognized by the plan
         if not isinstance(length_unit, basestring):
             raise TypeError('FirstRunner.__init__ - length_unit is expected to be a string')
+        if not FirstDistance.is_valid_unit(length_unit):
+            raise ValueError('FirstRunner.__init__ - length unit not recognized')
 
         if FirstUtils.is_internet_on():
             from validate_email import validate_email
 
             if email is not None and not validate_email(email):
-                raise ValueError('FirstRunner.__init__ - invalide email address')
+                raise ValueError('FirstRunner.__init__ - invalid email address')
 
         self.name = name
         self.age = age
@@ -50,6 +65,16 @@ class FirstRunner(object):
 
     def details(self, level=0, indent=''):
 
+        """
+        Generate a detailed text report
+
+        :param level: level of details; 0 for minimum
+        :type level: int
+        :param indent:
+        :type indent: str
+        :return: plain text string
+        :rtype: str
+        """
         out_string = indent + 'Runner:\n'
         out_string += indent + '  Name - ' + self.name + '\n'
         if level > 0:

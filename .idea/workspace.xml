@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_race.py" afterPath="$PROJECT_DIR$/src/first_race.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_race.py" afterPath="$PROJECT_DIR$/test/test_race.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_runner.py" afterPath="$PROJECT_DIR$/src/first_runner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_runner.py" afterPath="$PROJECT_DIR$/test/test_runner.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,21 +23,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="first_race.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/first_race.py">
+      <file leaf-file-name="first_runner.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/first_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
-              <folding />
+            <state relative-caret-position="593">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+              <folding>
+                <element signature="e#29#69#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test_race.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/test/test_race.py">
+      <file leaf-file-name="test_runner.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/test_runner.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="82" column="53" lean-forward="false" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
+            <state relative-caret-position="213">
+              <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="first_race.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/first_race.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="109" column="19" lean-forward="true" selection-start-line="104" selection-start-column="22" selection-end-line="109" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -91,14 +105,12 @@
         <option value="$PROJECT_DIR$/test/test_time.py" />
         <option value="$PROJECT_DIR$/src/first_time.py" />
         <option value="$PROJECT_DIR$/src/first_utils.py" />
-        <option value="$PROJECT_DIR$/test/test_runner.py" />
         <option value="$PROJECT_DIR$/src/maps.html" />
         <option value="$PROJECT_DIR$/src/first_segment.py" />
         <option value="$PROJECT_DIR$/database/FIRSTregularPlans.xml" />
         <option value="$PROJECT_DIR$/test/test_distance.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/test/test_data.py" />
-        <option value="$PROJECT_DIR$/src/first_runner.py" />
         <option value="$PROJECT_DIR$/src/first_workout.py" />
         <option value="$PROJECT_DIR$/src/first_step.py" />
         <option value="$PROJECT_DIR$/test/test_plan.py" />
@@ -112,6 +124,8 @@
         <option value="$PROJECT_DIR$/src/first_plan.py" />
         <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/test/test_race.py" />
+        <option value="$PROJECT_DIR$/src/first_runner.py" />
+        <option value="$PROJECT_DIR$/test/test_runner.py" />
       </list>
     </option>
   </component>
@@ -484,12 +498,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 14m 06s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 34m 09s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 15h 34m 50s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -512,6 +520,12 @@
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 16h 54m 11s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 17h 30m 30s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.10 at 17h 31m 14s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
   </component>
@@ -725,16 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="0" lean-forward="true" selection-start-line="58" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/first_time.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -883,14 +887,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_runner.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="50" column="15" lean-forward="false" selection-start-line="50" selection-start-column="15" selection-end-line="50" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/first_step.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -1002,19 +998,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_race.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="153" column="25" lean-forward="false" selection-start-line="153" selection-start-column="25" selection-end-line="153" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/test_race.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
           <caret line="82" column="53" lean-forward="false" selection-start-line="82" selection-start-column="53" selection-end-line="82" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_race.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="109" column="19" lean-forward="true" selection-start-line="104" selection-start-column="22" selection-end-line="109" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="593">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding>
+            <element signature="e#29#69#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_runner.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="57" column="64" lean-forward="false" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
