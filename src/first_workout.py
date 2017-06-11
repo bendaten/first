@@ -1,5 +1,4 @@
 import datetime
-import re
 
 from parse import *
 
@@ -12,6 +11,18 @@ class FirstWorkout(object):
     # noinspection PyTypeChecker
     def __init__(self, name, workout_date, note=None):
 
+        """
+        Constructor
+
+        :param name:
+        :type name: str
+        :param workout_date:
+        :type workout_date: datetime.date
+        :param note:
+        :type note: str
+        :return: instance to FirstWorkout
+        :rtype: FirstWorkout
+        """
         if not isinstance(name, basestring):
             raise TypeError('FirstWorkout.__init__ - name must be a string')
         if not isinstance(workout_date, datetime.date):
@@ -27,8 +38,13 @@ class FirstWorkout(object):
 
     def add_step(self, step):
 
+        """
+
+        :param step:
+        :type step: FirstStepBase
+        """
         if not isinstance(step, FirstStepBase):
-            raise TypeError('step must be an instance of FirstStepBase')
+            raise TypeError('FirstWorkout.add_step - step must be an instance of FirstStepBase')
 
         self.steps.append(step)
 
@@ -36,6 +52,11 @@ class FirstWorkout(object):
 
     def set_status(self, status):
 
+        """
+
+        :param status: for now anything
+        :type status: str
+        """
         if status in self.statuses:
             self.status = status
         else:
@@ -57,6 +78,16 @@ class FirstWorkout(object):
 
     def details(self, level=0, indent=''):
 
+        """
+        Text report of a training plan
+
+        :param level: level of details; 0 for minimum
+        :type level: int
+        :param indent:
+        :type indent: str
+        :return: plain text string
+        :rtype: str
+        """
         out_string = indent + self.name + '\n'
         out_string += indent + '  ' + self.workout_date.strftime('%a %Y-%m-%d') + '\n'
         out_string += indent + '  ' + self.status + '\n'
@@ -73,6 +104,16 @@ class FirstWorkout(object):
 
     def total(self, what='distance', unit='mile'):
 
+        """
+        Calculate the total distance or time for this workout
+
+        :param what: distance or time
+        :type what: str
+        :param unit:
+        :type unit: str
+        :return: total distance value
+        :rtype: float
+        """
         result = 0
         for step in self.steps:
             result += step.total(what, unit)
@@ -81,6 +122,14 @@ class FirstWorkout(object):
 
     def tcx(self, indent=''):
 
+        """
+        Generate a tcx string to download to a Garmin device
+
+        :param indent:
+        :type indent: str
+        :return: a tcx format for the training plan
+        :rtype: str
+        """
         tcx_string = indent + '<Workout Sport="Running">\n'
         tcx_string += indent + '  ' + '<Name>' + self.name + '</Name>\n'
 
@@ -129,7 +178,7 @@ class FirstWorkout(object):
                                                                          time_index=time_index, race_pace=race_pace)
                 simple_instructions = ''
                 if repeat < 1:
-                    raise ValueError('Syntax error: missing nX before (')
+                    raise ValueError('FirstWorkout.__parse_steps - Syntax error: missing nX before (')
 
                 steps += simple_steps
                 remainder = remainder[1:]
@@ -138,7 +187,7 @@ class FirstWorkout(object):
                                                                                 time_index=time_index,
                                                                                 race_pace=race_pace)
                 if not close_par:
-                    raise ValueError('Unbalanced parentheses')
+                    raise ValueError('FirstWorkout.__parse_steps - Unbalanced parentheses')
                 step.set_steps(repeat_steps)
                 steps.append(step)
             elif char == ')':
@@ -154,7 +203,7 @@ class FirstWorkout(object):
 
         simple_steps, repeat = FirstWorkout.__parse_simple_steps(data, simple_instructions, time_index, race_pace)
         if repeat > 0:
-            raise ValueError('Syntax error: trailing nX')
+            raise ValueError('FirstWorkout.__parse_steps - Syntax error: trailing nX')
         steps += simple_steps
 
         return steps, remainder, False
@@ -162,11 +211,27 @@ class FirstWorkout(object):
     @classmethod
     def from_instructions(cls, instructions, wo_date, data, time_index, race_pace):
 
+        """
+        Constructor - create workout from instructions
+        :param instructions: see test_workout.py for examples
+        :type instructions: str
+        :param wo_date:
+        :type wo_date: datetime.date
+        :param data:
+        :type data: FirstData
+        :param time_index:
+        :type time_index: int
+        :param race_pace:
+        :type race_pace: FirstPace
+        :return: instance of FirstWorkout
+        :rtype: FirstWorkout
+        """
+        where_am_i = 'FirstWorkout.from_instructions'
         # noinspection PyTypeChecker
         if not isinstance(instructions, basestring):
-            raise TypeError('FirstWorkout.from_instructions - wi is expected to be a string')
+            raise TypeError(where_am_i + ' - wi is expected to be a string')
         if not isinstance(data, FirstData):
-            raise TypeError('FirstWorkout.from_instructions - data should be an instance of FirstData')
+            raise TypeError(where_am_i + ' - data should be an instance of FirstData')
 
         split1 = instructions.split(' ', 2)
         name = 'Week ' + split1[0] + ' Keyrun ' + split1[1]
@@ -175,7 +240,7 @@ class FirstWorkout(object):
         steps, remainder, close_par = FirstWorkout.__parse_steps(instructions=split1[2], data=data,
                                                                  time_index=time_index, race_pace=race_pace)
         if len(remainder) > 0:
-            raise ValueError('remainder is expected to be empty after all steps are parsed')
+            raise ValueError(where_am_i + ' - remainder is expected to be empty after all steps are parsed')
         for step in steps:
             wo.add_step(step=step)
 

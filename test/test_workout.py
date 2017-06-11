@@ -325,7 +325,7 @@ class TestFirstWorkout(unittest.TestCase):
             dummy = FirstWorkout.from_instructions(instructions=instructions, wo_date=wo_date,
                                                    data=data, time_index=ti, race_pace=rp)
         except ValueError as ex:
-            self.assertEqual('Unbalanced parentheses', str(ex))
+            self.assertEqual('FirstWorkout.__parse_steps - Unbalanced parentheses', str(ex))
 
 
 if __name__ == '__main__':
