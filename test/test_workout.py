@@ -203,7 +203,6 @@ class TestFirstWorkout(unittest.TestCase):
 
             # Time steps
             step = wo1.steps[0]
-            self.assertEqual('body', step.get_type())
             self.assertEqual(0, step.step_id)
             self.assertEqual('warmup', step.name)
             self.assertEqual('0:09:23 min per mile', str(step.pace))
@@ -214,7 +213,6 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertAlmostEquals(1.59858, step.total('distance', 'mile'), 5)
 
             step = wo1.steps[2]
-            self.assertEqual('body', step.get_type())
             self.assertEqual(4, step.step_id)
             self.assertEqual('cooldown', step.name)
             self.assertEqual('0:09:23 min per mile', str(step.pace))
@@ -226,13 +224,11 @@ class TestFirstWorkout(unittest.TestCase):
 
             # Repeat step
             step = wo1.steps[1]
-            self.assertEqual('repeat', step.get_type())
             self.assertEqual(1, step.step_id)
             self.assertEqual('repeat X 3', step.name)
             self.assertEqual(3, step.repeat)
             self.assertEqual(2, len(step.steps))
             substep = step.steps[0]
-            self.assertEqual('body', substep.get_type())
             self.assertEqual(2, substep.step_id)
             self.assertEqual('1600m', substep.name)
             self.assertEqual('0:07:18 min per mile', str(substep.pace))
@@ -242,7 +238,6 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertAlmostEquals(7.25762, substep.total('time', 'minute'), 5)
             self.assertAlmostEquals(0.99419, substep.total('distance', 'mile'), 5)
             substep = step.steps[1]
-            self.assertEqual('body', substep.get_type())
             self.assertEqual(3, substep.step_id)
             self.assertEqual('200 m@RI', substep.name)
             self.assertEqual('0:09:23 min per mile', str(substep.pace))
@@ -285,19 +280,16 @@ class TestFirstWorkout(unittest.TestCase):
 
             # recursive repeat step
             step = wo2.steps[1]
-            self.assertEqual('repeat', step.get_type())
             self.assertEqual(6, step.step_id)
             self.assertEqual('repeat X 3', step.name)
             self.assertEqual(3, step.repeat)
             self.assertEqual(3, len(step.steps))
             substep = step.steps[1]
-            self.assertEqual('repeat', substep.get_type())
             self.assertEqual(8, substep.step_id)
             self.assertEqual('repeat X 4', substep.name)
             self.assertEqual(4, substep.repeat)
             self.assertEqual(1, len(substep.steps))
             subsubstep = substep.steps[0]
-            self.assertEqual('body', subsubstep.get_type())
             self.assertEqual(9, subsubstep.step_id)
             self.assertEqual('200 m@RI', subsubstep.name)
             self.assertEqual('0:09:23 min per mile', str(subsubstep.pace))

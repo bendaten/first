@@ -93,37 +93,37 @@ class TestFirstStepNew(unittest.TestCase):
             dummy = FirstStepBody(name=123, pace=p1, time=t1)
             self.fail('Should not get here with bad name')
         except TypeError as ex:
-            self.assertEqual('name must be a string', str(ex))
+            self.assertEqual('FirstStepBase.__init__ - name must be a string', str(ex))
 
         try:  # bad pace
             dummy = FirstStepBody(name='dummy', pace='bad pace type', time=t1)
             self.fail('Should not get here with bad pace')
         except TypeError as ex:
-            self.assertEqual('pace must be an instance of FirstPace', str(ex))
+            self.assertEqual('FirstStepBody.__init__ - pace must be an instance of FirstPace', str(ex))
 
         try:  # no distance and no time
             dummy = FirstStepBody(name='dummy', pace=p1)
             self.fail('Should not get here with neither distance nor duration')
         except ValueError as ex:
-            self.assertEqual('Either distance or time must have a value', str(ex))
+            self.assertEqual('FirstStepBody.__init__ - Either distance or time must have a value', str(ex))
 
         try:  # bad distance
             dummy = FirstStepBody(name='dummy', pace=p1, distance=123.45)
             self.fail('Should not get here with bad distance')
         except TypeError as ex:
-            self.assertEqual('distance must be an instance of FirstDistance', str(ex))
+            self.assertEqual('FirstStepBody.__init__ - distance must be an instance of FirstDistance', str(ex))
 
         try:  # bad time
             dummy = FirstStepBody(name='dummy', pace=p1, time=987.65)
             self.fail('Should not get here with bad time')
         except TypeError as ex:
-            self.assertEqual('time must be an instance of FirstTime', str(ex))
+            self.assertEqual('FirstStepBody.__init__ - time must be an instance of FirstTime', str(ex))
 
         try:  # both distance and time
             dummy = FirstStepBody(name='dummy', pace=p1, distance=d1, time=t1)
             self.fail('Should not get here with both distance and time')
         except ValueError as ex:
-            self.assertEqual('cannot set both distance and duration in the same step', str(ex))
+            self.assertEqual('FirstStepBody.__init__ - cannot set both distance and duration in the same step', str(ex))
 
     def test_repeat(self):
 
@@ -208,19 +208,19 @@ class TestFirstStepNew(unittest.TestCase):
             dummy = FirstStepRepeat(name='bla', repeat='3')
             self.fail('Should not get here with bad repeat type')
         except TypeError as ex:
-            self.assertEqual('repeat must be an integer', str(ex))
+            self.assertEqual('FirstStepRepeat.__init__ - repeat must be an integer', str(ex))
 
-        try:  # begative repeat
+        try:  # negative repeat
             dummy = FirstStepRepeat(name='bla', repeat=-3)
             self.fail('Should not get here with negative repeat value')
         except ValueError as ex:
-            self.assertEqual('repeat must be greater than 0', str(ex))
+            self.assertEqual('FirstStepRepeat.__init__ - repeat must be greater than 0', str(ex))
 
         try:  # bad child step type
             s1.add_step('bad step')
             self.fail('Should not get here with bad step type')
         except TypeError as ex:
-            self.assertEqual('step must be an instance of FirstStepBase', str(ex))
+            self.assertEqual('FirstStepRepeat.add_step - step must be an instance of FirstStepBase', str(ex))
 
     def test_reset(self):
 

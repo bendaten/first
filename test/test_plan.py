@@ -147,7 +147,6 @@ class TestFirstPlan(unittest.TestCase):
             self.assertEqual('Week 1 Keyrun 1', wo.name)
             self.assertEqual(3, len(wo.steps))
             step = wo.steps[0]
-            self.assertEqual('body', step.get_type())  # repeat
             self.assertEqual('warmup', step.name)
             self.assertEqual(0, step.step_id)
             self.assertEqual('time', step.get_duration_type())
@@ -157,20 +156,17 @@ class TestFirstPlan(unittest.TestCase):
             step = wo.steps[1]
             self.assertEqual('repeat X 3', step.name)
             self.assertEqual(1, step.step_id)
-            self.assertEqual('repeat', step.get_type())
             self.assertEqual(3, step.repeat)  # repeat
             self.assertEqual(2, len(step.steps))
             substep = step.steps[0]
             self.assertEqual('1600m', substep.name)
             self.assertEqual(2, substep.step_id)
-            self.assertEqual('body', substep.get_type())
             self.assertEqual('distance', substep.get_duration_type())
             self.assertEqual('1600.0 m', str(substep.distance))
             self.assertEqual('0:09:26 min per mile', str(substep.pace))
             substep = step.steps[1]
             self.assertEqual('200 m@RI', substep.name)
             self.assertEqual(3, substep.step_id)
-            self.assertEqual('body', substep.get_type())
             self.assertEqual('distance', substep.get_duration_type())
             self.assertEqual('200.0 m', str(substep.distance))
             self.assertEqual('0:11:31 min per mile', str(substep.pace))
@@ -178,7 +174,6 @@ class TestFirstPlan(unittest.TestCase):
             step = wo.steps[2]
             self.assertEqual('cooldown', step.name)
             self.assertEqual(4, step.step_id)
-            self.assertEqual('body', substep.get_type())
             self.assertEqual('time', step.get_duration_type())
             self.assertEqual('0:10:00', str(step.time))
             self.assertEqual('0:11:31 min per mile', str(step.pace))

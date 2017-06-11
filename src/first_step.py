@@ -26,15 +26,8 @@ class FirstStepBase(object):
     # noinspection PyTypeChecker
     def __init__(self, name):
 
-        """
-        Constructor
-        
-        :param name: step name
-        :type name: str
-        """
-
         if not isinstance(name, basestring):
-            raise TypeError('name must be a string')
+            raise TypeError('FirstStepBase.__init__ - name must be a string')
 
         self.step_id = FirstStepBase.__global_id
         FirstStepBase.__global_id += 1
@@ -74,12 +67,14 @@ class FirstStepRepeat(FirstStepBase):
         :type name: str
         :param repeat: number of repetitions of the child steps
         :type repeat: int
+        :return: instance of FirstStepRepeat
+        :rtype: FirstStepRepeat
         """
 
         if repeat is not None and not isinstance(repeat, int):
-            raise TypeError('repeat must be an integer')
+            raise TypeError('FirstStepRepeat.__init__ - repeat must be an integer')
         if repeat < 1:
-            raise ValueError('repeat must be greater than 0')
+            raise ValueError('FirstStepRepeat.__init__ - repeat must be greater than 0')
 
         FirstStepBase.__init__(self, name=name)
 
@@ -87,21 +82,26 @@ class FirstStepRepeat(FirstStepBase):
         self.steps = []
 
     @staticmethod
-    def get_type():
+    def __get_type():
 
         return 'repeat'
 
-    @staticmethod
-    def get_tcx_type():
-
-        return 'Repeat_t'
-
     def __str__(self):
 
-        return FirstStepBase.__str__(self) + 'type - ' + self.get_type() + '  repeat - ' + str(self.repeat) + '\n'
+        return FirstStepBase.__str__(self) + 'type - ' + self.__get_type() + '  repeat - ' + str(self.repeat) + '\n'
 
     def details(self, level=0, indent=''):
 
+        """
+        Generate a detailed text report
+
+        :param level: level of details; 0 for minimum
+        :type level: int
+        :param indent:
+        :type indent: str
+        :return: plain text string
+        :rtype: str
+        """
         out_string = FirstStepBase.details(self, indent=indent)
         for child in self.steps:
             out_string += child.details(indent=indent + '  ')
@@ -110,6 +110,18 @@ class FirstStepRepeat(FirstStepBase):
 
     def tcx(self, indent='', child=False, delta_seconds=5):
 
+        """
+        Generate a tcx string to download to a Garmin device
+
+        :param indent:
+        :type indent: str
+        :param child: is a child of a repeat step (can be recursive)
+        :type child: bool
+        :param delta_seconds: for speed tolerance
+        :type delta_seconds: int
+        :return: a tcx format for the training plan
+        :rtype: str
+        """
         tcx_string = FirstStepBase.tcx_start(self, child=child, step_type='Repeat_t', indent=indent)
 
         tcx_string += indent + '  <Repetitions>' + str(self.repeat) + '</Repetitions>\n'
@@ -134,7 +146,7 @@ class FirstStepRepeat(FirstStepBase):
         """
 
         if not isinstance(step, FirstStepBase):
-            raise TypeError('step must be an instance of FirstStepBase')
+            raise TypeError('FirstStepRepeat.add_step - step must be an instance of FirstStepBase')
 
         self.steps.append(step)
         
@@ -151,13 +163,14 @@ class FirstStepRepeat(FirstStepBase):
     def total(self, what='distance', unit='m'):
 
         """
-        Calculate the totla distance or time for this step
+        Calculate the total distance or time for this step
         
         :param what: distance or time
         :type what: str
         :param unit: 
         :type unit: str
-        :return: 
+        :return: total distance value
+        :rtype: float
         """
         value = 0
 
@@ -183,18 +196,20 @@ class FirstStepBody(FirstStepBase):
         :type distance: FirstDistance
         :param time: the segment duration
         :type time: FirstTime
+        :return: instance of FirstStepBocy
+        :rtype: FirstStepBody
         """
 
         if not isinstance(pace, FirstPace):
-            raise TypeError('pace must be an instance of FirstPace')
+            raise TypeError('FirstStepBody.__init__ - pace must be an instance of FirstPace')
         if distance is None and time is None:
-            raise ValueError('Either distance or time must have a value')
+            raise ValueError('FirstStepBody.__init__ - Either distance or time must have a value')
         if distance is not None and not isinstance(distance, FirstDistance):
-            raise TypeError('distance must be an instance of FirstDistance')
+            raise TypeError('FirstStepBody.__init__ - distance must be an instance of FirstDistance')
         if time is not None and not isinstance(time, FirstTime):
-            raise TypeError('time must be an instance of FirstTime')
+            raise TypeError('FirstStepBody.__init__ - time must be an instance of FirstTime')
         if distance is not None and time is not None:
-            raise ValueError('cannot set both distance and duration in the same step')
+            raise ValueError('FirstStepBody.__init__ - cannot set both distance and duration in the same step')
 
         FirstStepBase.__init__(self, name=name)
 
@@ -204,17 +219,22 @@ class FirstStepBody(FirstStepBase):
         self.time = time
 
     @staticmethod
-    def get_type():
+    def __get_type():
 
         return 'body'
 
     @staticmethod
-    def get_tcx_type():
+    def __get_tcx_type():
 
         return 'Step_t'
 
     def get_duration_type(self):
 
+        """
+
+        :return: 'distance' or 'time'
+        :rtype: str
+        """
         if self.distance is not None:
             return 'distance'
         else:
@@ -223,7 +243,7 @@ class FirstStepBody(FirstStepBase):
     def __str__(self):
 
         output = FirstStepBase.__str__(self)
-        output += 'type - ' + self.get_type() + '  pace - ' + str(self.pace) + '\n'
+        output += 'type - ' + self.__get_type() + '  pace - ' + str(self.pace) + '\n'
         if self.get_duration_type() == 'distance':
             output += 'Distance - ' + str(self.distance) + '\n'
         else:
@@ -233,6 +253,14 @@ class FirstStepBody(FirstStepBase):
 
     def details(self, level=0, indent=''):
 
+        """
+        Text report of a training plan
+
+        :param level: level of details; 0 for minimum
+        :param indent:
+        :return: plain text string
+        :rtype: str
+        """
         out_string = FirstStepBase.details(self, indent=indent)
         if self.get_duration_type() == 'distance':
             out_string += indent + '  ' + str(self.distance)
@@ -245,6 +273,18 @@ class FirstStepBody(FirstStepBase):
 
     def tcx(self, indent='', child=False, delta_seconds=5):
 
+        """
+        Generate a tcx string to download to a Garmin device
+
+        :param indent:
+        :type indent: str
+        :param child: is a child of a repeat step (can be recursive)
+        :type child: bool
+        :param delta_seconds: for speed tolerance
+        :type delta_seconds: int
+        :return: a tcx format for the training plan
+        :rtype: str
+        """
         tcx_string = FirstStepBase.tcx_start(self, child=child, step_type='Step_t', indent=indent)
 
         if self.get_duration_type() == 'distance':
@@ -278,6 +318,16 @@ class FirstStepBody(FirstStepBase):
 
     def total(self, what='distance', unit='m'):
 
+        """
+        Calculate the total distance or time for this step
+
+        :param what: distance or time
+        :type what: str
+        :param unit:
+        :type unit: str
+        :return: total distance value
+        :rtype: float
+        """
         if what == 'distance':
             if self.get_duration_type() == what:
                 return self.distance.convert_to(unit)
@@ -289,7 +339,7 @@ class FirstStepBody(FirstStepBase):
             else:
                 return self.pace.to_time(self.distance, unit)
         else:
-            raise ValueError('FirstStep.total - what must be "distance" or "duration"')
+            raise ValueError('FirstStepBody.total - what must be "distance" or "time"')
 
     @classmethod
     def from_instructions(cls, instructions, data, time_index, rp):
@@ -308,7 +358,6 @@ class FirstStepBody(FirstStepBase):
         :return: the step
         :rtype: FirstStep
         """
-
         segment_name = instructions.split('@')[0]
         increment = None
         pace = None
