@@ -10,7 +10,7 @@ class TestFirstRaceType(unittest.TestCase):
     def test_to_string(self):
 
         try:
-            r1 = FirstRaceType('marathon', 26.219, 'mile')
+            r1 = FirstRaceType(name='marathon', distance=26.219, unit='mile')
             self.assertEqual('marathon - 26.219 mile', str(r1))
         except ValueError as ex:
             self.fail(str(ex))
@@ -20,8 +20,8 @@ class TestFirstRace(unittest.TestCase):
 
     def test_to_string(self):
 
-        rt1 = FirstRaceType('5K', 5.0, 'km')
-        rd1 = date(2017, 7, 29)
+        rt1 = FirstRaceType(name='5K', distance=5.0, unit='km')
+        rd1 = date(year=2017, month=7, day=29)
         tt1 = FirstTime.from_string('0:25:30')
         tt2 = FirstTime.from_string('0:24:34')
 

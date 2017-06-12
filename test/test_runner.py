@@ -9,7 +9,7 @@ class TestFirstRunner(unittest.TestCase):
     def test_to_string(self):
 
         try:  # name only
-            r1 = FirstRunner('Yoseph Abulafia')
+            r1 = FirstRunner(name='Yoseph Abulafia')
             self.assertEqual('Name - Yoseph Abulafia\n', str(r1))
         except TypeError as tex:
             self.fail(str(tex))

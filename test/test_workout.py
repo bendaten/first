@@ -209,8 +209,8 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertEqual(None, step.distance)
             self.assertEqual('time', step.get_duration_type())
             self.assertEqual('0:15:00', str(step.time))
-            self.assertEqual(15.0, step.total('time', 'minute'))
-            self.assertAlmostEquals(1.59858, step.total('distance', 'mile'), 5)
+            self.assertEqual(15.0, step.total(what='time', unit='minute'))
+            self.assertAlmostEquals(1.59858, step.total(what='distance', unit='mile'), 5)
 
             step = wo1.steps[2]
             self.assertEqual(4, step.step_id)
@@ -219,8 +219,8 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertEqual(None, step.distance)
             self.assertEqual('time', step.get_duration_type())
             self.assertEqual('0:10:00', str(step.time))
-            self.assertEqual(600.0, step.total('time', 'second'))
-            self.assertAlmostEquals(1.06572, step.total('distance', 'mile'), 5)
+            self.assertEqual(600.0, step.total(what='time', unit='second'))
+            self.assertAlmostEquals(1.06572, step.total(what='distance', unit='mile'), 5)
 
             # Repeat step
             step = wo1.steps[1]
@@ -235,8 +235,8 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertEqual(None, substep.time)
             self.assertEqual('distance', substep.get_duration_type())
             self.assertEqual('1600.0 m', str(substep.distance))
-            self.assertAlmostEquals(7.25762, substep.total('time', 'minute'), 5)
-            self.assertAlmostEquals(0.99419, substep.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(7.25762, substep.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(0.99419, substep.total(what='distance', unit='mile'), 5)
             substep = step.steps[1]
             self.assertEqual(3, substep.step_id)
             self.assertEqual('200 m@RI', substep.name)
@@ -244,16 +244,16 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertEqual(None, substep.time)
             self.assertEqual('distance', substep.get_duration_type())
             self.assertEqual('200.0 m', str(substep.distance))
-            self.assertAlmostEquals(1.16611, substep.total('time', 'minute'), 5)
-            self.assertAlmostEquals(0.12427, substep.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(1.16611, substep.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(0.12427, substep.total(what='distance', unit='mile'), 5)
 
             # Repeat steps totals
-            self.assertAlmostEquals(25.27117, step.total('time', 'minute'), 5)
-            self.assertAlmostEquals(3.35540, step.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(25.27117, step.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(3.35540, step.total(what='distance', unit='mile'), 5)
 
             # Workout totals
-            self.assertAlmostEquals(50.27117, wo1.total('time', 'minute'), 5)
-            self.assertAlmostEquals(6.01970, wo1.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(50.27117, wo1.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(6.01970, wo1.total(what='distance', unit='mile'), 5)
 
             file_name = expanduser('~/PycharmProjects/first/database/cmp_workout1.tcx')
             # to_file = open(file_name, 'w')
@@ -296,17 +296,17 @@ class TestFirstWorkout(unittest.TestCase):
             self.assertEqual(None, subsubstep.time)
             self.assertEqual('distance', subsubstep.get_duration_type())
             self.assertEqual('200.0 m', str(subsubstep.distance))
-            self.assertAlmostEquals(1.16611, subsubstep.total('time', 'minute'), 5)
-            self.assertAlmostEquals(0.12427, subsubstep.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(1.16611, subsubstep.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(0.12427, subsubstep.total(what='distance', unit='mile'), 5)
 
-            self.assertAlmostEquals(4.66443, substep.total('time', 'minute'), 5)
-            self.assertAlmostEquals(0.4971, substep.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(4.66443, substep.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(0.4971, substep.total(what='distance', unit='mile'), 5)
 
-            self.assertAlmostEquals(46.20516, step.total('time', 'minute'), 5)
-            self.assertAlmostEquals(5.96516, step.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(46.20516, step.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(5.96516, step.total(what='distance', unit='mile'), 5)
 
-            self.assertAlmostEquals(71.20516, wo2.total('time', 'minute'), 5)
-            self.assertAlmostEquals(8.62946, wo2.total('distance', 'mile'), 5)
+            self.assertAlmostEquals(71.20516, wo2.total(what='time', unit='minute'), 5)
+            self.assertAlmostEquals(8.62946, wo2.total(what='distance', unit='mile'), 5)
 
             file_name = expanduser('~/PycharmProjects/first/database/cmp_workout2.tcx')
             # to_file = open(file_name, 'w')
