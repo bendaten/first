@@ -62,7 +62,9 @@ class FirstPlan(object):
         Text report of a training plan
 
         :param level: level of details; 0 for minimum
+        :type level: int
         :param indent:
+        :type indent: str
         :return: plain text string
         :rtype: str
         """
