@@ -75,7 +75,7 @@ class FirstPlan(object):
             raise ValueError(where_am_i + ' - level should be greater than or equal to 0')
 
         week = {0: 'Mon', 1: 'Tue', 2: 'Wed', 3: 'Thu', 4: 'Fri', 5: 'Sat', 6: 'Sun'}
-        out_string = indent + 'Training Plan:\n' + indent + self.name + '\n'
+        out_string = indent + 'Training Plan:\n' + indent + 'Name - "' + self.name + '"\n'
         out_string += indent + ('Workout days: ' + week[self.weekly_schedule[0]] + ', ' +
                                 week[self.weekly_schedule[1]] + ', ' +
                                 week[self.weekly_schedule[2]] + '\n')

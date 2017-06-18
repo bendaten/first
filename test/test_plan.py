@@ -23,7 +23,7 @@ class TestFirstPlan(unittest.TestCase):
 
         try:  # name only
             p1 = FirstPlan(name='My first marathon training plan', weekly_schedule=ws1)
-            self.assertEqual('Training Plan:\nMy first marathon training plan\nWorkout days: Mon, Wed, Sat\n', str(p1))
+            self.assertEqual('Training Plan:\nName - "My first marathon training plan"\nWorkout days: Mon, Wed, Sat\n', str(p1))
 
             file_name = expanduser('~/PycharmProjects/first/database/cmp_plan1.tcx')
             # to_file = open(file_name, 'w')
@@ -45,8 +45,8 @@ class TestFirstPlan(unittest.TestCase):
 
         try:  # all
             p2 = FirstPlan(name='My first marathon training plan', weekly_schedule=ws2, race=r1, runner=rn1)
-            cmp_string = ('Training Plan:\nMy first marathon training plan\nWorkout days: Tue, Thu, Sun\n' +
-                          'Race:\n  SFM of type Marathon - 42.195 km\nRunner:\n  Name - DBD\n')
+            cmp_string = ('Training Plan:\nName - "My first marathon training plan"\nWorkout days: Tue, Thu, Sun\n' +
+                          'Race:\n  Name - "SFM" of type Marathon - 42.195 km\nRunner:\n  Name - DBD\n')
             self.assertEqual(cmp_string, str(p2))
         except TypeError as tex:
             self.fail(str(tex))
@@ -102,8 +102,9 @@ class TestFirstPlan(unittest.TestCase):
 
         try:  # first workout
             p1.add_workout(workout=wo)
-            cmp_string = ('Training Plan:\nMy first marathon training plan\nWorkout days: Mon, Wed, Sat\nRace:\n' +
-                          '  SFM of type Marathon - 42.195 km\nRunner:\n  Name - DBD\nWorkouts: - 1\n' +
+            cmp_string = ('Training Plan:\nName - "My first marathon training plan"\n' +
+                          'Workout days: Mon, Wed, Sat\nRace:\n' +
+                          '  Name - "SFM" of type Marathon - 42.195 km\nRunner:\n  Name - DBD\nWorkouts: - 1\n' +
                           '  Week 1 Key-run 1\n    Sat 2017-06-24\n    scheduled\n')
             self.assertEqual(cmp_string, str(p1))
 

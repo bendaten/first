@@ -113,7 +113,7 @@ class FirstRace(object):
         :rtype: str
         """
         out_string = indent + 'Race:\n'
-        out_string += indent + '  ' + self.name + ' of type ' + str(self.race_type) + '\n'
+        out_string += indent + '  ' + 'Name - "' + self.name + '" of type ' + str(self.race_type) + '\n'
         if level > 0:
             out_string += indent + '  On ' + str(self.race_date) + '\n'
             if self.target_time is not None:
