@@ -77,7 +77,7 @@ class FirstRunner(object):
         :rtype: str
         """
         out_string = indent + 'Runner:\n'
-        out_string += indent + '  Name - ' + self.name + '\n'
+        out_string += indent + '  Name - "' + self.name + '"\n'
         if level > 0:
             if self.age is not None:
                 out_string += indent + '  Age - ' + str(self.age) + '\n'

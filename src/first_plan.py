@@ -86,9 +86,10 @@ class FirstPlan(object):
             out_string += self.runner.details(indent=indent, level=level)
 
         if len(self.workouts) > 0:
-            out_string += indent + 'Workouts: - ' + str(len(self.workouts)) + '\n'
+            out_string += indent + 'Workouts:\n'
             for wo in self.workouts:
                 out_string += wo.details(level=level, indent=indent + '  ')
+            out_string += indent + 'Total ' + str(len(self.workouts)) + ' workouts\n'
 
         return out_string
 
