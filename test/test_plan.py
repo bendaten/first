@@ -105,7 +105,7 @@ class TestFirstPlan(unittest.TestCase):
             cmp_string = ('Training Plan:\nName - "My first marathon training plan"\n' +
                           'Workout days: Mon, Wed, Sat\nRace:\n' +
                           '  Name - "SFM" of type Marathon - 42.195 km\nRunner:\n  Name - "DBD"\nWorkouts:\n' +
-                          '  Week 1 Key-run 1\n    Sat 2017-06-24\n    scheduled\n' +
+                          '  "Week 1 Key-run 1"\n    Sat 2017-06-24\n    scheduled\n' +
                           'Total 1 workouts\n')
             self.assertEqual(cmp_string, str(p1))
 

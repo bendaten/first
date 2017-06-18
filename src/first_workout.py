@@ -92,7 +92,7 @@ class FirstWorkout(object):
         :return: plain text string
         :rtype: str
         """
-        out_string = indent + self.name + '\n'
+        out_string = indent + '"' + self.name + '"\n'
         out_string += indent + '  ' + self.workout_date.strftime('%a %Y-%m-%d') + '\n'
         out_string += indent + '  ' + self.status + '\n'
 

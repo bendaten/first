@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf716cac-5111-48dc-a028-54b140a50e15" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_plan.py" afterPath="$PROJECT_DIR$/src/first_plan.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_runner.py" afterPath="$PROJECT_DIR$/src/first_runner.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/first_workout.py" afterPath="$PROJECT_DIR$/src/first_workout.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_plan.py" afterPath="$PROJECT_DIR$/test/test_plan.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test_workout.py" afterPath="$PROJECT_DIR$/test/test_workout.py" />
     </list>
     <ignored path="first.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +27,8 @@
       <file leaf-file-name="test_plan.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/test/test_plan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+            <state relative-caret-position="128">
+              <caret line="107" column="47" lean-forward="false" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -49,8 +49,28 @@
       <file leaf-file-name="first_plan.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/first_plan.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+            <state relative-caret-position="142">
+              <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="first_workout.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/first_workout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="94" column="50" lean-forward="false" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test_workout.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/test_workout.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="71">
+              <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -115,17 +135,17 @@
         <option value="$PROJECT_DIR$/src/first_pace.py" />
         <option value="$PROJECT_DIR$/src/first_step.py" />
         <option value="$PROJECT_DIR$/src/first_time.py" />
-        <option value="$PROJECT_DIR$/src/first_workout.py" />
         <option value="$PROJECT_DIR$/test/test_data.py" />
         <option value="$PROJECT_DIR$/test/test_distance.py" />
         <option value="$PROJECT_DIR$/src/first_data.py" />
         <option value="$PROJECT_DIR$/test/test_race.py" />
         <option value="$PROJECT_DIR$/test/test_runner.py" />
-        <option value="$PROJECT_DIR$/test/test_workout.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/src/first_race.py" />
         <option value="$PROJECT_DIR$/src/first_runner.py" />
         <option value="$PROJECT_DIR$/src/first_plan.py" />
+        <option value="$PROJECT_DIR$/src/first_workout.py" />
+        <option value="$PROJECT_DIR$/test/test_workout.py" />
         <option value="$PROJECT_DIR$/test/test_plan.py" />
       </list>
     </option>
@@ -289,36 +309,6 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="Unittests for test_distance.TestFirstDistance.test_to_string" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="first" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_distance.TestFirstDistance.test_to_string&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittests in test_distance.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="first" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_distance.py&quot;" />
-      <option name="_new_targetType" value="&quot;PATH&quot;" />
-      <method />
-    </configuration>
     <configuration default="false" name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -335,6 +325,39 @@
       <option name="PARAMETERS" value="--target_time &quot;4:12:00&quot; --race_date &quot;10/12/2017&quot; --runner_name &quot;Yossi Abulafia&quot; --keyrun_days &quot;tue thu sun&quot;" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="first_workout" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="first" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/first_workout.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittests in test_workout.py" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="first" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/test/test_workout.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
     <configuration default="true" type="OdpsPythonConfigurationType" factoryName="MaxCompute Python">
@@ -475,17 +498,17 @@
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test" />
       <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
       <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in test_plan.py" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests for test_distance.TestFirstDistance.test_to_string" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_distance.py" />
-      <item index="5" class="java.lang.String" itemvalue="Python.main" />
+      <item index="3" class="java.lang.String" itemvalue="Python.main" />
+      <item index="4" class="java.lang.String" itemvalue="Python.first_workout" />
+      <item index="5" class="java.lang.String" itemvalue="Python tests.Unittests in test_workout.py" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in test (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_plan.py" />
-        <item index="2" class="java.lang.String" itemvalue="Python.main" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in test_distance.py" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests for test_distance.TestFirstDistance.test_to_string" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in test_workout.py" />
+        <item index="2" class="java.lang.String" itemvalue="Python.first_workout" />
+        <item index="3" class="java.lang.String" itemvalue="Python.main" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in test_plan.py" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -525,12 +548,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 01h 18m 12s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
-    <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 01h 19m 51s.xml">
-      <configuration name="Unittests in test (1)" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 01h 24m 30s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
@@ -546,18 +563,25 @@
     <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 01h 56m 22s.xml">
       <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_plan_py - 2017.06.18 at 01h 23m 44s.xml">
-      <configuration name="Unittests in test_plan.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 01h 59m 35s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_plan_py - 2017.06.18 at 01h 24m 18s.xml">
-      <configuration name="Unittests in test_plan.py" configurationId="tests" />
+    <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 02h 01m 17s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittests_in_test_(1) - 2017.06.18 at 02h 02m 05s.xml">
+      <configuration name="Unittests in test (1)" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_test_plan_py - 2017.06.18 at 01h 56m 10s.xml">
       <configuration name="Unittests in test_plan.py" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_in_test_workout_py - 2017.06.18 at 02h 01m 03s.xml">
+      <configuration name="Unittests in test_workout.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="23" width="1258" height="821" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -640,16 +664,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/first_plan.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/first_plan.py</url>
           <line>91</line>
           <option name="timeStamp" value="114" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/src/first_plan.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="115" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="115" />
+      <option name="time" value="116" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -950,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test_workout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="247" column="92" lean-forward="true" selection-start-line="247" selection-start-column="92" selection-end-line="247" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../escalate_defects/escalate_defects.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -984,14 +1001,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="174">
           <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/first_workout.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1049,16 +1058,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/first_plan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+        <state relative-caret-position="142">
+          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/first_workout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="94" column="50" lean-forward="false" selection-start-line="94" selection-start-column="50" selection-end-line="94" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test_workout.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="53" column="44" lean-forward="false" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/test_plan.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="108" column="45" lean-forward="false" selection-start-line="108" selection-start-column="45" selection-end-line="108" selection-end-column="45" />
+        <state relative-caret-position="128">
+          <caret line="107" column="47" lean-forward="false" selection-start-line="107" selection-start-column="47" selection-end-line="107" selection-end-column="47" />
           <folding />
         </state>
       </provider>

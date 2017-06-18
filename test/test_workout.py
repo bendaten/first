@@ -51,7 +51,7 @@ class TestFirstWorkout(unittest.TestCase):
                           'type - body  pace - 0:10:00 min per mile\n' +
                           'Time - 0:10:00\n')
             self.assertEqual(cmp_string, str(wo))
-            cmp_string = 'Week 1 Key-run 1\n' +\
+            cmp_string = '"Week 1 Key-run 1"\n' +\
                          '  Sat 2017-06-24\n' +\
                          '  scheduled\n' +\
                          '  Step: "Warm up"\n' +\
